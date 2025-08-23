@@ -20,7 +20,6 @@ function App() {
           <Link to="/" className="nav-link p-2">Inicio</Link>
           <Link to="/formulario" className="nav-link p-2">Formulario</Link>
           <Link to="/JuegoEspacial" className="nav-link p-2">Juego Espacial</Link>
-          <Link to="/FetchPokemons" className='nav-link p-2'>Pokemons</Link>
           <Link to="/FetchPokemonsDetalleS" className='nav-link p-2'>Pokemons detalle</Link>
           <Link to="/CartasGame" className='nav-link p-2'>juego de cartas </Link>
           <Link to="/clima" className="nav-link p-2">Clima</Link>
@@ -33,7 +32,6 @@ function App() {
             <Route path="/" element={<h2>Bienvenido a mi página principal</h2>} />
             <Route path="/formulario" element={<Formulario />} />
             <Route path="/JuegoEspacial" element={<JuegoEspacial />} />
-            <Route path='/FetchPokemons' element={<FetchPokemons/>}/>
             <Route path='/FetchPokemonsDetalleS' element={<FetchPokemonsDetalleS/>}/>
             <Route path='/CartasGame' element={<CartasGame/>}/>
             <Route path="/clima" element={<Clima />} />
