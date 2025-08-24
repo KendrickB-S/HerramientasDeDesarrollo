@@ -15,7 +15,7 @@ function App() {
       <div className="d-flex">
         {/* Menú de navegación vertical */}
         <nav className="flex-column p-3 bg-dark text-light" style={{ height: '100vh' }}>
-          <h3 className="text-primary">React</h3>
+          <h3 className="text-primary">Menú</h3>
           <Link to="/" className="nav-link p-2">Inicio</Link>
           <Link to="/formulario" className="nav-link p-2">Formulario</Link>
           <Link to="/JuegoEspacial" className="nav-link p-2">Juego Espacial</Link>
@@ -28,7 +28,7 @@ function App() {
 
         <div className="p-3">
           <Routes>
-            <Route path="/" element={<h2>Bienvenido a mi página principal</h2>} />
+            <Route path="/" element={<h2>Bienvenido a mi aplicación, diversas herramientas para poner en práctica Git Hub</h2>} />
             <Route path="/formulario" element={<Formulario />} />
             <Route path="/JuegoEspacial" element={<JuegoEspacial />} />
             <Route path='/FetchPokemonsDetalleS' element={<FetchPokemonsDetalleS/>}/>
