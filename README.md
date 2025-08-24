@@ -25,3 +25,6 @@ Empaqueta React correctamente en modo de producción y optimiza la compilación 
 La compilación está minimizada y los nombres de archivo incluyen los hashes.
 ¡Tu aplicación está lista para implementarse!
 
+# Fututos cambios para el proyecto
+para mejorar el proyecto se tiene como objetivo poder desplegar en un servidor gratuito.
+tambien se implementara mas funcionalidades, como poder integrar un mapa de Google maps.
