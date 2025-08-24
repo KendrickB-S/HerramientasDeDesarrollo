@@ -12,7 +12,7 @@ const Clima = () => {
     setDatos(null);
     setLoading(true);
 
-    const API_KEY = '6c3056bca8fc7600b7a83f84cb755c70'; // Tu API key sin la "Y" final
+    const API_KEY = '6c3056bca8fc7600b7a83f84cb755c70'; 
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${ciudad},${pais}&appid=${API_KEY}&units=metric&lang=es`;
 
     try {
