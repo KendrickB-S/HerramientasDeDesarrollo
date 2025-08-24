@@ -4,7 +4,6 @@ import Clima from './components/Clima';
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Formulario from './components/Formulario';
-import FetchPokemons from './components/FetchPokemons';
 import FetchPokemonsDetalleS from './components/FetchPokemonsDetalleS';
 import CartasGame from './components/CartasGame';
 import JuegoEspacial from './components/JuegoEspacial';
