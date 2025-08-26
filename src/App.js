@@ -7,7 +7,7 @@ import Formulario from './components/Formulario';
 import FetchPokemonsDetalleS from './components/FetchPokemonsDetalleS';
 import CartasGame from './components/CartasGame';
 import JuegoEspacial from './components/JuegoEspacial';
-
+import Calculadora from './components/Calculadora';
 
 
 function App() {
