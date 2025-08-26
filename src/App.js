@@ -9,6 +9,7 @@ import CartasGame from './components/CartasGame';
 import JuegoEspacial from './components/JuegoEspacial';
 
 
+
 function App() {
   return (
     <Router>
@@ -22,6 +23,7 @@ function App() {
           <Link to="/FetchPokemonsDetalleS" className='nav-link p-2'>Pokemons detalle</Link>
           <Link to="/CartasGame" className='nav-link p-2'>juego de cartas </Link>
           <Link to="/clima" className="nav-link p-2">Clima</Link>
+
           
 
         </nav>
@@ -34,6 +36,7 @@ function App() {
             <Route path='/FetchPokemonsDetalleS' element={<FetchPokemonsDetalleS/>}/>
             <Route path='/CartasGame' element={<CartasGame/>}/>
             <Route path="/clima" element={<Clima />} />
+
 
           </Routes>
         </div>
