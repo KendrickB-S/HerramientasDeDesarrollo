@@ -27,7 +27,7 @@ function Calculadora() {
         setResultado(n1 * n2);
         break;
       case "/":
-        setResultado(n2 !== 0 ? n1 / n2 : "❌ No se puede dividir entre 0");
+        setResultado(n2 !== 0 ? n1 / n2 : " No se puede dividir entre 0");
         break;
       default:
         setResultado("Operación inválida");
@@ -36,7 +36,7 @@ function Calculadora() {
 
   return (
     <div className="calc-container">
-      <h2 className="calc-title">🧮 Calculadora Moderna</h2>
+      <h2 className="calc-title"> Calculadora</h2>
       <div className="inputs">
         <input
           type="number"
@@ -55,10 +55,10 @@ function Calculadora() {
       </div>
 
       <div className="buttons">
-        <button className="btn btn-primary" onClick={() => handleCalcular("+")}>➕</button>
-        <button className="btn btn-secondary" onClick={() => handleCalcular("-")}>➖</button>
-        <button className="btn btn-success" onClick={() => handleCalcular("*")}>✖️</button>
-        <button className="btn btn-danger" onClick={() => handleCalcular("/")}>➗</button>
+        <button className="btn btn-primary" onClick={() => handleCalcular("+")}>➕ Suma</button>
+        <button className="btn btn-secondary" onClick={() => handleCalcular("-")}>➖ Resta</button>
+        <button className="btn btn-success" onClick={() => handleCalcular("*")}>✖️ Multiplicación</button>
+        <button className="btn btn-danger" onClick={() => handleCalcular("/")}>➗ División</button>
       </div>
 
       {resultado !== null && (
