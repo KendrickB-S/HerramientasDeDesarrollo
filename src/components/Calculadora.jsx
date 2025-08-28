@@ -55,10 +55,10 @@ function Calculadora() {
       </div>
 
       <div className="buttons">
-        <button className="btn btn-primary" onClick={() => handleCalcular("+")}>➕ Suma</button>
-        <button className="btn btn-secondary" onClick={() => handleCalcular("-")}>➖ Resta</button>
-        <button className="btn btn-success" onClick={() => handleCalcular("*")}>✖️ Multiplicación</button>
-        <button className="btn btn-danger" onClick={() => handleCalcular("/")}>➗ División</button>
+        <button className="btn btn-primary" onClick={() => handleCalcular("+")}>➕</button>
+        <button className="btn btn-secondary" onClick={() => handleCalcular("-")}>➖</button>
+        <button className="btn btn-success" onClick={() => handleCalcular("*")}>✖️</button>
+        <button className="btn btn-danger" onClick={() => handleCalcular("/")}>➗</button>
       </div>
 
       {resultado !== null && (
