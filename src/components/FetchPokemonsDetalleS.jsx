@@ -70,7 +70,7 @@ const FetchPokemonsDetalleS = () => {
   };
 
   const styles = {
-    container: { display: 'flex', padding: '20px', gap: '20px' },
+    container: { display: 'inline-flex', padding: '20px', gap: '20px' },
     columnLeft: { flex: 1 },
     columnRight: {
       flex: 1, border: '1px solid #ccc', borderRadius: '8px', padding: '16px',
