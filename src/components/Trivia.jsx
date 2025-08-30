@@ -27,6 +27,12 @@ function Trivia() {
       });
   }, []);
 
+  const handleRespuesta = (opcion) => {
+    setRespuestaSeleccionada(opcion);
+    if (opcion === preguntas[indice].correcta) {
+      setPuntaje(puntaje + 1);
+    }
+  };
 }
 
 export default Trivia;
