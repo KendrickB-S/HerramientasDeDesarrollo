@@ -42,7 +42,22 @@ function Trivia() {
       setTerminado(true);
     }
   };
-  
+
+  if (preguntas.length === 0) {
+    return <h3 className="text-center mt-5">Cargando preguntas...</h3>;
+  }
+
+  if (terminado) {
+    return (
+      <div className="container text-center mt-5">
+        <h2>🎉 Trivia terminada</h2>
+        <p>Tu puntaje final: <strong>{puntaje} / {preguntas.length}</strong></p>
+        <button className="btn btn-primary mt-3" onClick={() => window.location.reload()}>
+          Jugar de nuevo
+        </button>
+      </div>
+    );
+  }
 }
 
 export default Trivia;
