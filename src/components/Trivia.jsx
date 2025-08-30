@@ -33,6 +33,16 @@ function Trivia() {
       setPuntaje(puntaje + 1);
     }
   };
+
+  const siguientePregunta = () => {
+    if (indice + 1 < preguntas.length) {
+      setIndice(indice + 1);
+      setRespuestaSeleccionada(null);
+    } else {
+      setTerminado(true);
+    }
+  };
+  
 }
 
 export default Trivia;
