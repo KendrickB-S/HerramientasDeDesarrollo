@@ -75,6 +75,14 @@ function Trivia() {
                     : "btn-danger"
                   : "btn-outline-dark"
               }`}
+              onClick={() => handleRespuesta(opcion)}
+              disabled={respuestaSeleccionada !== null}
+            >
+              {opcion}
+            </button>
+          ))}
+        </div>
+      </div>
 }
 
 export default Trivia;
