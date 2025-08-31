@@ -39,6 +39,7 @@ function App() {
             <Route path='/CartasGame' element={<CartasGame/>}/>
             <Route path="/clima" element={<Clima />} />
             <Route path="/calculadora" element={<Calculadora />} />
+            <Route path="/trivia" element={<Trivia />} />
 
           </Routes>
         </div>
