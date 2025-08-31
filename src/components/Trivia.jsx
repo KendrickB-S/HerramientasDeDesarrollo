@@ -83,6 +83,13 @@ function Trivia() {
           ))}
         </div>
       </div>
+      {respuestaSeleccionada && (
+        <button className="btn btn-primary mt-3" onClick={siguientePregunta}>
+          Siguiente ➡️
+        </button>
+      )}
+    </div>
+  );
 }
 
 export default Trivia;
