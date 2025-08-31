@@ -58,6 +58,23 @@ function Trivia() {
       </div>
     );
   }
+
+  return (
+    <div className="container mt-5">
+      <h4>Pregunta {indice + 1} de {preguntas.length}</h4>
+      <div className="card p-4 shadow-lg">
+        <h5>{preguntas[indice].pregunta}</h5>
+        <div className="mt-3">
+          {preguntas[indice].opciones.map((opcion, i) => (
+            <button
+              key={i}
+              className={`btn w-100 mb-2 ${
+                respuestaSeleccionada === opcion
+                  ? opcion === preguntas[indice].correcta
+                    ? "btn-success"
+                    : "btn-danger"
+                  : "btn-outline-dark"
+              }`}
 }
 
 export default Trivia;
