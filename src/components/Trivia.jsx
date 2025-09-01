@@ -1,102 +1,80 @@
-import React, { useState, useEffect } from "react";
+// src/components/Trivia.js
+import React, { useEffect, useState } from "react";
 
-function Trivia() {
+export default function Trivia() {
   const [preguntas, setPreguntas] = useState([]);
   const [indice, setIndice] = useState(0);
   const [puntaje, setPuntaje] = useState(0);
   const [respuestaSeleccionada, setRespuestaSeleccionada] = useState(null);
   const [terminado, setTerminado] = useState(false);
+  const [cargando, setCargando] = useState(true);
+  const [error, setError] = useState(null);
 
-// Cargar preguntas desde la API
-  useEffect(() => {
-    fetch("https://opentdb.com/api.php?amount=10")
-      .then((res) => res.json())
-      .then((data) => {
-        const preguntasFormateadas = data.results.map((p) => {
-          const opciones = [...p.incorrect_answers];
-          const randomIndex = Math.floor(Math.random() * (opciones.length + 1));
-          opciones.splice(randomIndex, 0, p.correct_answer);
+  // ---- utils
+  const shuffleInPlace = (arr) => {
+    const a = [...arr];
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  };
 
-          return {
-            pregunta: decodeURIComponent(p.question),
-            opciones: opciones.map((o) => decodeURIComponent(o)),
-            correcta: decodeURIComponent(p.correct_answer),
-          };
-        });
-        setPreguntas(preguntasFormateadas);
+  // ---- carga de preguntas (con control de errores y abort)
+  const cargarPreguntas = async (signal) => {
+    setCargando(true);
+    setError(null);
+    try {
+      const res = await fetch(
+        "https://opentdb.com/api.php?amount=10",
+        { signal }
+      );
+      const data = await res.json();
+
+      // Validaciones fuertes
+      if (
+        !data ||
+        typeof data !== "object" ||
+        data.response_code !== 0 ||
+        !Array.isArray(data.results) ||
+        data.results.length === 0
+      ) {
+        // response_code: 0 ok, 1 sin resultados, 2 parámetro inválido, 3 token vacío, 4 token sin preguntas, 5 rate-limit
+        throw new Error(
+          `No se recibieron preguntas (code: ${data?.response_code ?? "?"}).`
+        );
+      }
+
+      const formateadas = data.results.map((p) => {
+        const opcionesRaw = [...p.incorrect_answers, p.correct_answer];
+        const opciones = shuffleInPlace(opcionesRaw).map((o) =>
+          decodeURIComponent(o)
+        );
+        return {
+          pregunta: decodeURIComponent(p.question),
+          opciones,
+          correcta: decodeURIComponent(p.correct_answer),
+        };
       });
-  }, []);
 
-  const handleRespuesta = (opcion) => {
-    setRespuestaSeleccionada(opcion);
-    if (opcion === preguntas[indice].correcta) {
-      setPuntaje(puntaje + 1);
-    }
-  };
-
-  const siguientePregunta = () => {
-    if (indice + 1 < preguntas.length) {
-      setIndice(indice + 1);
+      setPreguntas(formateadas);
+      setIndice(0);
+      setPuntaje(0);
       setRespuestaSeleccionada(null);
-    } else {
-      setTerminado(true);
+      setTerminado(false);
+    } catch (e) {
+      if (e.name !== "AbortError") {
+        console.error(e);
+        setError(
+          e?.message ||
+            "Ocurrió un problema cargando las preguntas. Intenta nuevamente."
+        );
+        setPreguntas([]); // garantizamos estado consistente
+      }
+    } finally {
+      setCargando(false);
     }
   };
 
-  if (preguntas.length === 0) {
-    return <h3 className="text-center mt-5">Cargando preguntas...</h3>;
-  }
 
-  if (terminado) {
-    return (
-      <div className="container text-center mt-5">
-        <h2>🎉 Trivia terminada</h2>
-        <p>Tu puntaje final: <strong>{puntaje} / {preguntas.length}</strong></p>
-        <button className="btn btn-primary mt-3" onClick={() => window.location.reload()}>
-          Jugar de nuevo
-        </button>
-      </div>
-    );
-  }
-
-  // Validar las preguntas
-const preguntaActual = preguntas[indice];
-
-if (!preguntaActual) {
-  return <h3 className="text-center mt-5">Cargando pregunta...</h3>;
 }
-
-  return (
-    <div className="container mt-5">
-      <h4>Pregunta {indice + 1} de {preguntas.length}</h4>
-      <div className="card p-4 shadow-lg">
-        <h5>{preguntas[indice].pregunta}</h5>
-        <div className="mt-3">
-          {preguntas[indice].opciones.map((opcion, i) => (
-            <button
-              key={i}
-              className={`btn w-100 mb-2 ${
-                respuestaSeleccionada === opcion
-                  ? opcion === preguntas[indice].correcta
-                    ? "btn-success"
-                    : "btn-danger"
-                  : "btn-outline-dark"
-              }`}
-              onClick={() => handleRespuesta(opcion)}
-              disabled={respuestaSeleccionada !== null}
-            >
-              {opcion}
-            </button>
-          ))}
-        </div>
-      </div>
-      {respuestaSeleccionada && (
-        <button className="btn btn-primary mt-3" onClick={siguientePregunta}>
-          Siguiente ➡️
-        </button>
-      )}
-    </div>
-  );
-}
-
-export default Trivia;
