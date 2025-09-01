@@ -20,7 +20,7 @@ export default function Trivia() {
     return a;
   };
 
-  // ---- carga de preguntas (con control de errores y abort)
+  // ---- carga de preguntas (con control de errores)
   const cargarPreguntas = async (signal) => {
     setCargando(true);
     setError(null);
@@ -31,7 +31,7 @@ export default function Trivia() {
       );
       const data = await res.json();
 
-      // Validaciones fuertes
+      // Validaciones 
       if (
         !data ||
         typeof data !== "object" ||
@@ -69,7 +69,7 @@ export default function Trivia() {
           e?.message ||
             "Ocurrió un problema cargando las preguntas. Intenta nuevamente."
         );
-        setPreguntas([]); // garantizamos estado consistente
+        setPreguntas([]); 
       }
     } finally {
       setCargando(false);
@@ -84,7 +84,7 @@ export default function Trivia() {
     // nueva carga (sin recargar la página)
     const controller = new AbortController();
     cargarPreguntas(controller.signal);
-    // no necesitamos mantener el controller aquí porque no salimos del componente
+   
   };
 
   // ---- carga inicial
@@ -92,7 +92,7 @@ export default function Trivia() {
     const controller = new AbortController();
     cargarPreguntas(controller.signal);
     return () => controller.abort();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+   
   }, []);
 
   // ---- handlers
