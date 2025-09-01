@@ -9,7 +9,7 @@ function Trivia() {
 
 // Cargar preguntas desde la API
   useEffect(() => {
-    fetch("APYKEY")
+    fetch("https://opentdb.com/api.php?amount=10")
       .then((res) => res.json())
       .then((data) => {
         const preguntasFormateadas = data.results.map((p) => {
@@ -58,6 +58,13 @@ function Trivia() {
       </div>
     );
   }
+
+  // Validar las preguntas
+const preguntaActual = preguntas[indice];
+
+if (!preguntaActual) {
+  return <h3 className="text-center mt-5">Cargando pregunta...</h3>;
+}
 
   return (
     <div className="container mt-5">
