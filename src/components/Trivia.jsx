@@ -104,4 +104,50 @@ export default function Trivia() {
     }
   };
 
+  const siguientePregunta = () => {
+    if (indice + 1 < preguntas.length) {
+      setIndice((i) => i + 1);
+      setRespuestaSeleccionada(null);
+    } else {
+      setTerminado(true);
+    }
+  };
+
+  // ================== RENDER ==================
+  if (cargando) {
+    return <h3 className="text-center mt-5">Cargando preguntas…</h3>;
+  }
+
+  if (error) {
+    return (
+      <div className="container text-center mt-5">
+        <h2>⚠️ Error</h2>
+        <p className="mb-3">{error}</p>
+        <button className="btn btn-primary" onClick={reiniciarTrivia}>
+          Reintentar
+        </button>
+      </div>
+    );
+  }
+
+  if (terminado) {
+    return (
+      <div className="container text-center mt-5">
+        <h2>🎉 Trivia terminada</h2>
+        <p>
+          Tu puntaje final: <strong>{puntaje}</strong> / {preguntas.length}
+        </p>
+        <button className="btn btn-primary mt-3" onClick={reiniciarTrivia}>
+          🔄 Jugar de nuevo
+        </button>
+      </div>
+    );
+  }
+
+  const preguntaActual = preguntas[indice];
+  if (!preguntaActual) {
+    // salvaguarda extra (no debería llegar aquí con las validaciones arriba)
+    return <h3 className="text-center mt-5">Preparando pregunta…</h3>;
+  }
+
 }
