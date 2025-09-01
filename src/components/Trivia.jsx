@@ -76,5 +76,32 @@ export default function Trivia() {
     }
   };
 
+  // ---- reiniciar (DEFINIDA ANTES DE RENDER)
+  const reiniciarTrivia = () => {
+    setTerminado(false);
+    setRespuestaSeleccionada(null);
+    setIndice(0);
+    // nueva carga (sin recargar la página)
+    const controller = new AbortController();
+    cargarPreguntas(controller.signal);
+    // no necesitamos mantener el controller aquí porque no salimos del componente
+  };
+
+  // ---- carga inicial
+  useEffect(() => {
+    const controller = new AbortController();
+    cargarPreguntas(controller.signal);
+    return () => controller.abort();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // ---- handlers
+  const handleRespuesta = (opcion) => {
+    setRespuestaSeleccionada(opcion);
+    const actual = preguntas[indice];
+    if (actual && opcion === actual.correcta) {
+      setPuntaje((p) => p + 1);
+    }
+  };
 
 }
