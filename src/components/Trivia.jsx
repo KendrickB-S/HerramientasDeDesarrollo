@@ -150,4 +150,38 @@ export default function Trivia() {
     return <h3 className="text-center mt-5">Preparando pregunta…</h3>;
   }
 
+  return (
+    <div className="container mt-5">
+      <h4>
+        Pregunta {indice + 1} de {preguntas.length}
+      </h4>
+      <div className="card p-4 shadow-lg">
+        <h5>{preguntaActual.pregunta}</h5>
+        <div className="mt-3">
+          {preguntaActual.opciones.map((opcion, i) => (
+            <button
+              key={i}
+              className={`btn w-100 mb-2 ${
+                respuestaSeleccionada === opcion
+                  ? opcion === preguntaActual.correcta
+                    ? "btn-success"
+                    : "btn-danger"
+                  : "btn-outline-dark"
+              }`}
+              onClick={() => handleRespuesta(opcion)}
+              disabled={respuestaSeleccionada !== null}
+            >
+              {opcion}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {respuestaSeleccionada && (
+        <button className="btn btn-primary mt-3" onClick={siguientePregunta}>
+          Siguiente ➡️
+        </button>
+      )}
+    </div>
+  );
 }
