@@ -26,7 +26,6 @@ function App() {
           <Link to="/clima" className="nav-link p-2">Clima</Link>
           <Link to="/calculadora" className="nav-link p-2">Calculadora</Link>
           <Link to="/trivia" className="nav-link p-2">Trivia</Link>
-          
 
         </nav>
 
