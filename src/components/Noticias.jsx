@@ -29,5 +29,8 @@ export default function Noticias() {
 
     fetchNoticias();
   }, []);
+
+  if (loading) return <h3 className="text-center mt-5">Cargando noticias...</h3>;
+  if (error) return <h3 className="text-center mt-5">⚠️ {error}</h3>;
   
   }
