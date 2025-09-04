@@ -5,10 +5,8 @@ export default function Noticias() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // ⚠️ Necesitas tu API_KEY de https://newsapi.org
-HEAD
-  const API_KEY = "";
-577a97e (modificacion menor)
+  // ⚠️ API_KEY de https://newsapi.org
+  const API_KEY = "API_KEY_AQUI";
   const URL = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}`;
 
   useEffect(() => {
