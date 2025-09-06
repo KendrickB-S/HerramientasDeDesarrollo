@@ -41,6 +41,7 @@ function App() {
             <Route path="/clima" element={<Clima />} />
             <Route path="/calculadora" element={<Calculadora />} />
             <Route path="/trivia" element={<Trivia />} />
+            <Route path="/estadisticas" element={<Estadisticas />} />
 
           </Routes>
         </div>
