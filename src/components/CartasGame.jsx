@@ -16,7 +16,7 @@ const CartasGame = () => {
   const victorySound = useRef(new Audio('/sounds/victory.mp3'));
 
   const saved = JSON.parse(localStorage.getItem('selectedPokemons') || '[]');
-  const pokes = saved.slice(0, 10);
+  const pokes = saved.slice(0, 20);
   const noPokemons = pokes.length === 0;
 
   const [cards, setCards] = useState(() => generateCards(pokes));
