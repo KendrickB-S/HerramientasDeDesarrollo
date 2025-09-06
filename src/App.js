@@ -9,6 +9,7 @@ import CartasGame from './components/CartasGame';
 import JuegoEspacial from './components/JuegoEspacial';
 import Calculadora from './components/Calculadora';
 import Trivia from './components/Trivia';
+import Estadisticas from "./components/Estadisticas";
 
 
 function App() {
