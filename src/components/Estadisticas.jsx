@@ -1,3 +1,4 @@
+// src/components/Estadisticas.js
 import React from "react";
 import {
   BarChart,
@@ -13,7 +14,7 @@ import {
   ResponsiveContainer
 } from "recharts";
 
-// 📊 Datos de ejemplo 
+// 📊 Datos de ejemplo (puedes reemplazarlos por datos reales)
 const data = [
   { name: "Enero", usuarios: 400, ventas: 240 },
   { name: "Febrero", usuarios: 300, ventas: 139 },
@@ -40,7 +41,7 @@ export default function Estadisticas() {
         {/* Gráfico de Barras */}
         <div className="col-md-6">
           <h5 className="text-center">Usuarios y Ventas</h5>
-          <ResponsiveContainer width="100%" height={300}>
+          <ResponsiveContainer width={400} height={350}>
             <BarChart data={data}>
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="name" />
@@ -52,17 +53,18 @@ export default function Estadisticas() {
             </BarChart>
           </ResponsiveContainer>
         </div>
+
         {/* Gráfico Circular */}
         <div className="col-md-6">
           <h5 className="text-center">Uso de Navegadores</h5>
-          <ResponsiveContainer width="100%" height={300}>
+          <ResponsiveContainer width={400} height={350}>
             <PieChart>
               <Pie
                 data={dataPie}
                 cx="50%"
                 cy="50%"
-                labelLine={false}
-                outerRadius={100}
+                labelLine={true}
+                outerRadius={120}
                 dataKey="value"
                 label
               >
