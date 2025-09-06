@@ -10,6 +10,7 @@ import JuegoEspacial from './components/JuegoEspacial';
 import Calculadora from './components/Calculadora';
 import Trivia from './components/Trivia';
 import Estadisticas from "./components/Estadisticas";
+import Noticias from './components/Noticias';
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
           <Link to="/calculadora" className="nav-link p-2">Calculadora</Link>
           <Link to="/trivia" className="nav-link p-2">Trivia</Link>
           <Link to="/estadisticas" className="nav-link p-2">Estadísticas</Link>
+          <Link to="/noticias" className="nav-link p-2">Noticias</Link>
 
         </nav>
 
@@ -42,6 +44,7 @@ function App() {
             <Route path="/calculadora" element={<Calculadora />} />
             <Route path="/trivia" element={<Trivia />} />
             <Route path="/estadisticas" element={<Estadisticas />} />
+            <Route path="/noticias" element={<Noticias />} />
 
           </Routes>
         </div>
