@@ -52,3 +52,29 @@ export default function Estadisticas() {
             </BarChart>
           </ResponsiveContainer>
         </div>
+        {/* Gráfico Circular */}
+        <div className="col-md-6">
+          <h5 className="text-center">Uso de Navegadores</h5>
+          <ResponsiveContainer width="100%" height={300}>
+            <PieChart>
+              <Pie
+                data={dataPie}
+                cx="50%"
+                cy="50%"
+                labelLine={false}
+                outerRadius={100}
+                dataKey="value"
+                label
+              >
+                {dataPie.map((entry, index) => (
+                  <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                ))}
+              </Pie>
+              <Tooltip />
+            </PieChart>
+          </ResponsiveContainer>
+        </div>
+      </div>
+    </div>
+  );
+}
