@@ -35,7 +35,7 @@ function App() {
 
         <div className="p-3">
           <Routes>
-            <Route path="/" element={<h2>Bienvenido a mi aplicación, diversas herramientas para poner en práctica Git Hub</h2>} />
+            <Route path="/" element={<h2>Bienvenido a mi aplicación, diversas herramientas para poner en práctica herramientas de React</h2>} />
             <Route path="/formulario" element={<Formulario />} />
             <Route path="/JuegoEspacial" element={<JuegoEspacial />} />
             <Route path='/FetchPokemonsDetalleS' element={<FetchPokemonsDetalleS/>}/>
