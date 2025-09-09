@@ -26,7 +26,7 @@ export default function Trivia() {
     setError(null);
     try {
       const res = await fetch(
-        "https://opentdb.com/api.php?amount=10",
+        "https://opentdb.com/api.php?amount=10&category=27&difficulty=medium",
         { signal }
       );
       const data = await res.json();
