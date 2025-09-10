@@ -35,7 +35,7 @@ function App() {
 
         </nav>
 
-        <div className="p-3">
+        <div className="proyecto">
           <Routes>
             <Route path="/" element={<h2>Bienvenido a mi aplicación, diversas herramientas para poner en práctica herramientas de React</h2>} />
             <Route path="/formulario" element={<Formulario />} />
