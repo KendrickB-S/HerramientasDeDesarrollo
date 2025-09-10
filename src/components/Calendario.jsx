@@ -52,6 +52,7 @@ export default function Calendario() {
       </button>
       <Calendar
         localizer={localizer}
+        culture="es"
         events={eventos}
         startAccessor="start"
         endAccessor="end"
