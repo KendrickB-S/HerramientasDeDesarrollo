@@ -31,6 +31,7 @@ function App() {
           <Link to="/trivia" className="nav-link p-2">Trivia</Link>
           <Link to="/estadisticas" className="nav-link p-2">Estadísticas</Link>
           <Link to="/noticias" className="nav-link p-2">Noticias</Link>
+          <Link to="/calendario" className="nav-link p-2">Calendario</Link>
 
         </nav>
 
