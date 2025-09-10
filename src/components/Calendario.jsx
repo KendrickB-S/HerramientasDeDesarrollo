@@ -43,3 +43,29 @@ export default function Calendario() {
 
     setEventos([...eventos, nuevoEvento]);
   };
+
+  return (
+    <div className="container mt-4">
+      <h2 className="mb-3 text-primary">📅 Calendario de eventos</h2>
+      <button className="btn btn-success mb-3" onClick={agregarEvento}>
+        ➕ Agregar evento
+      </button>
+      <Calendar
+        localizer={localizer}
+        events={eventos}
+        startAccessor="start"
+        endAccessor="end"
+        style={{ height: 500 }}
+        messages={{
+          next: "Siguiente",
+          previous: "Anterior",
+          today: "Hoy",
+          month: "Mes",
+          week: "Semana",
+          day: "Día",
+          agenda: "Agenda",
+        }}
+      />
+    </div>
+  );
+}
