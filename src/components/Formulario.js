@@ -10,7 +10,7 @@ const Formulario = () => {
   };
 
   return (
-    <div>
+    <div style={{ maxWidth: 400, margin: '0 auto', backgroundColor:'#e0ebf4ff', padding:'16px'  }}>
       <h2>Formulario</h2>
       <form onSubmit={manejarEnvio}>
         <div className="mb-3">
