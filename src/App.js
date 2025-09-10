@@ -11,6 +11,7 @@ import Calculadora from './components/Calculadora';
 import Trivia from './components/Trivia';
 import Estadisticas from "./components/Estadisticas";
 import Noticias from './components/Noticias';
+import Calendario from './components/Calendario';
 
 
 function App() {
