@@ -47,6 +47,7 @@ function App() {
             <Route path="/trivia" element={<Trivia />} />
             <Route path="/estadisticas" element={<Estadisticas />} />
             <Route path="/noticias" element={<Noticias />} />
+            <Route path="/calendario" element={<Calendario />} />
 
           </Routes>
         </div>
