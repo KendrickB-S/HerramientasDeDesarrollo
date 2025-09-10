@@ -116,7 +116,7 @@ const CartasGame = () => {
         display: 'grid',
         gridTemplateColumns: 'repeat(auto-fill, 100px)',
         gap: 14,
-        maxWidth: 640,
+        maxWidth: 1450,
       }}>
         {cards.map(card => (
           <div
