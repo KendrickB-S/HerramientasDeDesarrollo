@@ -17,8 +17,8 @@ export default function Mapa() {
     <div className="container mt-4">
       <h2 className="mb-4 text-primary">🌍 Mapa Interactivo</h2>
       <MapContainer
-        center={[40.4168, -3.7038]} // Madrid como ejemplo
-        zoom={5}
+        center={[-16.4090,-71.5375]} // Ejemplo de coordenadas
+        zoom={13}
         style={{ height: "500px", width: "100%", borderRadius: "12px" }}
       >
         {/* Fondo del mapa */}
@@ -28,15 +28,9 @@ export default function Mapa() {
         />
 
         {/* Ejemplo de marcador */}
-        <Marker position={[40.4168, -3.7038]} icon={customIcon}>
+        <Marker position={[-16.398803, -71.536919]} icon={customIcon}>
           <Popup>
-            📍 <b>Madrid</b> <br /> Ejemplo de marcador en el mapa.
-          </Popup>
-        </Marker>
-
-        <Marker position={[48.8566, 2.3522]} icon={customIcon}>
-          <Popup>
-            📍 <b>París</b> <br /> Otro marcador de ejemplo.
+            📍 <b>Arequipa</b> <br /> Ejemplo de marcador en el mapa.
           </Popup>
         </Marker>
       </MapContainer>
