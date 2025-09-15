@@ -27,3 +27,7 @@ Mostrar imágenes dinámicamente según una búsqueda.
 
 Con preguntas de Open Trivia API.
 Puntaje acumulado, mostrar resultado final.
+
+### mapa 
+
+integración con api gratuita para mostrar un mapa interactivo 
