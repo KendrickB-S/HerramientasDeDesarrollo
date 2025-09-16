@@ -20,7 +20,7 @@ export default function Trivia() {
     return a;
   };
 
-  // ---- carga de preguntas (con control de errores)
+  // ---- carga de preguntas
   const cargarPreguntas = async (signal) => {
     setCargando(true);
     setError(null);
@@ -31,7 +31,6 @@ export default function Trivia() {
       );
       const data = await res.json();
 
-      // Validaciones 
       if (
         !data ||
         typeof data !== "object" ||
@@ -39,7 +38,6 @@ export default function Trivia() {
         !Array.isArray(data.results) ||
         data.results.length === 0
       ) {
-        // response_code: 0 ok, 1 sin resultados, 2 parámetro inválido, 3 token vacío, 4 token sin preguntas, 5 rate-limit
         throw new Error(
           `No se recibieron preguntas (code: ${data?.response_code ?? "?"}).`
         );
@@ -69,33 +67,27 @@ export default function Trivia() {
           e?.message ||
             "Ocurrió un problema cargando las preguntas. Intenta nuevamente."
         );
-        setPreguntas([]); 
+        setPreguntas([]);
       }
     } finally {
       setCargando(false);
     }
   };
 
-  // ---- reiniciar (DEFINIDA ANTES DE RENDER)
   const reiniciarTrivia = () => {
     setTerminado(false);
     setRespuestaSeleccionada(null);
     setIndice(0);
-    // nueva carga (sin recargar la página)
     const controller = new AbortController();
     cargarPreguntas(controller.signal);
-   
   };
 
-  // ---- carga inicial
   useEffect(() => {
     const controller = new AbortController();
     cargarPreguntas(controller.signal);
     return () => controller.abort();
-   
   }, []);
 
-  // ---- handlers
   const handleRespuesta = (opcion) => {
     setRespuestaSeleccionada(opcion);
     const actual = preguntas[indice];
@@ -114,9 +106,7 @@ export default function Trivia() {
   };
 
   // ================== RENDER ==================
-  if (cargando) {
-    return <h3 className="text-center mt-5">Cargando preguntas…</h3>;
-  }
+  if (cargando) return <h3 className="text-center mt-5">Cargando preguntas…</h3>;
 
   if (error) {
     return (
@@ -146,7 +136,6 @@ export default function Trivia() {
 
   const preguntaActual = preguntas[indice];
   if (!preguntaActual) {
-    // salvaguarda extra (no debería llegar aquí con las validaciones arriba)
     return <h3 className="text-center mt-5">Preparando pregunta…</h3>;
   }
 
@@ -175,6 +164,15 @@ export default function Trivia() {
             </button>
           ))}
         </div>
+
+        {/* 👇 Nueva sección: mostrar la correcta si se equivocó */}
+        {respuestaSeleccionada &&
+          respuestaSeleccionada !== preguntaActual.correcta && (
+            <div className="alert alert-info mt-3">
+              La respuesta correcta era:{" "}
+              <strong>{preguntaActual.correcta}</strong>
+            </div>
+          )}
       </div>
 
       {respuestaSeleccionada && (
@@ -185,3 +183,4 @@ export default function Trivia() {
     </div>
   );
 }
+
