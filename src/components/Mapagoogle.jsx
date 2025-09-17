@@ -17,15 +17,15 @@ export default function Mapagoogle() {
         script.onload = () => {
           // Inicializar mapa cuando el script se cargue
           const mapa = new window.google.maps.Map(mapRef.current, {
-            center: { lat: -12.0464, lng: -77.0428 }, // Lima por defecto
-            zoom: 6,
+            center: { lat: -16.4090, lng: -71.5375 }, // Arequipa centro
+            zoom: 13,
           });
 
           // 🔹 Ejemplo: marcador inicial
           new window.google.maps.Marker({
-            position: { lat: -12.0464, lng: -77.0428 },
+            position: { lat: -16.4090, lng: -71.5375 }, // Arequipa centro
             map: mapa,
-            title: "Sucursal Lima",
+            title: "Centro de Arequipa",
           });
 
           setMap(mapa);
@@ -42,10 +42,17 @@ export default function Mapagoogle() {
 
   return (
     <div>
-      <h2 className="text-xl font-bold mb-2">🗺️ Mapa con Google Maps API</h2>
       <div
         ref={mapRef}
-        style={{ width: "100%", height: "500px", borderRadius: "12px" }}
+        style={{
+          width: "100vw",
+          height: "100vh",
+          position: "fixed",
+          top: 0,
+          left: 0,
+          borderRadius: 0,
+          zIndex: 1,
+        }}
       ></div>
     </div>
   );
