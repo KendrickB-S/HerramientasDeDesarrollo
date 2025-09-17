@@ -13,6 +13,7 @@ import Estadisticas from "./components/Estadisticas";
 import Noticias from './components/Noticias';
 import Calendario from './components/Calendario';
 import Mapa from "./components/Mapa";
+import MapaGoogle from "./components/Mapagoogle";
 
 
 
@@ -35,6 +36,7 @@ function App() {
           <Link to="/noticias" className="nav-link p-2">Noticias</Link>
           <Link to="/calendario" className="nav-link p-2">Calendario</Link>
           <Link to="/mapa" className="nav-link p-2">Mapa</Link>
+          <Link to="/mapagoogle" className="nav-link p-2">Mapa Google</Link> 
 
         </nav>
 
@@ -52,6 +54,7 @@ function App() {
             <Route path="/noticias" element={<Noticias />} />
             <Route path="/calendario" element={<Calendario />} />
             <Route path="/mapa" element={<Mapa />} />
+            <Route path="/mapagoogle" element={<MapaGoogle />} />
 
           </Routes>
         </div>
