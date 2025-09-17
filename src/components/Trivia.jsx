@@ -165,7 +165,7 @@ export default function Trivia() {
           ))}
         </div>
 
-        {/* 👇 Nueva sección: mostrar la correcta si se equivocó */}
+        {/* Nueva sección: mostrar la correcta si se equivocó */}
         {respuestaSeleccionada &&
           respuestaSeleccionada !== preguntaActual.correcta && (
             <div className="alert alert-info mt-3">
