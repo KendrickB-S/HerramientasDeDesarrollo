@@ -7,8 +7,6 @@ para mejorar el proyecto se tiene como objetivo poder desplegar en un servidor g
 
 tambien se implementara mas funcionalidades que se puedean desarrollar, como poder:
 
-### integrar un mapa de Google maps.
-
 ### Página de Noticias con API
 
 Usar NewsAPI o alguna gratuita.
@@ -27,7 +25,12 @@ Mostrar imágenes dinámicamente según una búsqueda.
 
 Con preguntas de Open Trivia API.
 Puntaje acumulado, mostrar resultado final.
+muestra la respuesta correcta cuando se falla
 
 ### mapa 
 
-integración con api gratuita para mostrar un mapa interactivo 
+integración mapa con dependencias para react
+
+### Google maps
+
+integracion de un mapa con la api de google maps
