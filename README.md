@@ -1,11 +1,9 @@
 
-# enlace de la web
-## https://herramientas-de-desarrollo.vercel.app/
+## enlace de la web
+### https://herramientas-de-desarrollo.vercel.app/
 
-# Fututos cambios para el proyecto
-para mejorar el proyecto se tiene como objetivo poder desplegar en un servidor gratuito.
-
-tambien se implementara mas funcionalidades que se puedean desarrollar, como poder:
+### cambios realizados en el proyecto
+---------------------------------------
 
 ### Página de Noticias con API
 
