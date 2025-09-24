@@ -1,6 +1,7 @@
 
 ## enlace de la web
 ### https://herramientas-de-desarrollo.vercel.app/
+# ___________________Avance 1_____________________
 
 ### cambios realizados en el proyecto
 ---------------------------------------
@@ -32,3 +33,5 @@ integración mapa con dependencias para react
 ### Google maps
 
 integracion de un mapa con la api de google maps
+
+# _________________Avance 2_________________________
