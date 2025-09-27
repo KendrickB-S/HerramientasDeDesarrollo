@@ -31,5 +31,13 @@ export default function Notas() {
     setTexto("");
   };
 
+  const editarNota = (i) => {
+    setTexto(notas[i].contenido);
+    setEditando(i);
+  };
+
+  const borrarNota = (id) => {
+    setNotas(notas.filter((n) => n.id !== id));
+  };
 
 }
