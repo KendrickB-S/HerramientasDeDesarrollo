@@ -40,4 +40,47 @@ export default function Notas() {
     setNotas(notas.filter((n) => n.id !== id));
   };
 
+  
+return (
+    <div className="container mt-5">
+      <h2 className="text-primary">Mis Notas</h2>
+
+      <div className="mb-3">
+        <textarea
+          className="form-control"
+          rows="4"
+          value={texto}
+          onChange={(e) => setTexto(e.target.value)}
+          placeholder="Escribe tu nota aquí..."
+        />
+        <button className="btn btn-success mt-2" onClick={agregarNota}>
+          {editando !== null ? "Guardar cambios" : "Agregar Nota"}
+        </button>
+      </div>
+
+      <div className="row">
+        {notas.map((nota, i) => (
+          <div key={nota.id} className="col-md-4 mb-3">
+            <div className="card shadow-sm">
+              <div className="card-body">
+                <p>{nota.contenido}</p>
+                <button
+                  className="btn btn-warning btn-sm me-2"
+                  onClick={() => editarNota(i)}
+                >
+                  Editar
+                </button>
+                <button
+                  className="btn btn-danger btn-sm"
+                  onClick={() => borrarNota(nota.id)}
+                >
+                  Borrar
+                </button>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 }
