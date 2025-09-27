@@ -15,3 +15,21 @@ export default function Notas() {
   useEffect(() => {
     localStorage.setItem("notas", JSON.stringify(notas));
   }, [notas]);
+  const agregarNota = () => {
+    if (!texto.trim()) return;
+
+    if (editando !== null) {
+      // Editar nota existente
+      const nuevas = [...notas];
+      nuevas[editando].contenido = texto;
+      setNotas(nuevas);
+      setEditando(null);
+    } else {
+        // Agregar nueva nota
+      setNotas([...notas, { id: Date.now(), contenido: texto }]);
+    }
+    setTexto("");
+  };
+
+
+}
