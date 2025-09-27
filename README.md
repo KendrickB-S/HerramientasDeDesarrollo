@@ -42,6 +42,11 @@ __________________________________________
 ________________________________________
 ### cambios esperados para este avance 
 
+### notas basico
+crear notas
+editar notas
+guardar en localStorage
+
 ### E-commerce básico.
 
 
