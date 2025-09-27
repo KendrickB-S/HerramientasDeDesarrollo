@@ -1,6 +1,7 @@
 
 ## enlace de la web
-### https://herramientas-de-desarrollo.vercel.app/
+---
+### <a href="https://herramientas-de-desarrollo.vercel.app/" target="_blank">TEXTO_DEL_ENLACE</a>
 ________________________________________
 # Avance 1
 _______________________________________
