@@ -25,7 +25,6 @@ export default function Notas() {
       setNotas(nuevas);
       setEditando(null);
     } else {
-        // Agregar nueva nota
       setNotas([...notas, { id: Date.now(), contenido: texto }]);
     }
     setTexto("");
