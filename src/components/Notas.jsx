@@ -46,6 +46,7 @@ export default function NotasMarkdown() {
   return (
     <div className="container mt-5">
       <h2 className="text-primary">Notas con Markdown</h2>
+      <h3 className="text-secondary"># título, **negrita**, *cursiva*, - lista</h3>
 
       <div className="row mb-3">
         <div className="col-md-6">
@@ -54,7 +55,6 @@ export default function NotasMarkdown() {
             rows="6"
             value={texto}
             onChange={(e) => setTexto(e.target.value)}
-            placeholder="Escribe en Markdown... (# título, **negrita**, *cursiva*, - lista)"
           />
           <button className="btn btn-success mt-2" onClick={guardarNota}>
             {editando !== null ? "💾 Guardar cambios" : "Agregar Nota"}
