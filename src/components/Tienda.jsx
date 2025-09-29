@@ -38,5 +38,42 @@ function Tienda() {
     setCarrito([]);
     localStorage.removeItem("carrito");
   };
+ return (
+    <div style={{ padding: "20px" }}>
+      <h2>Mini Tienda</h2>
 
+      <h3>Productos</h3>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "20px" }}>
+        {productos.map((producto) => (
+          <div key={producto.id} style={{ border: "1px solid #ccc", padding: "10px" }}>
+            <img src={producto.image} alt={producto.title} style={{ width: "100px", height: "100px", objectFit: "contain" }} />
+            <h4>{producto.title}</h4>
+            <p>${producto.price}</p>
+            <button onClick={() => agregarAlCarrito(producto)}>Agregar al carrito</button>
+          </div>
+        ))}
+      </div>
+
+      <hr />
+
+      <h3>🛒 Carrito</h3>
+      {carrito.length === 0 ? (
+        <p>El carrito está vacío.</p>
+      ) : (
+        <ul>
+          {carrito.map((item, index) => (
+            <li key={index}>
+              {item.title} - ${item.price.toFixed(2)}{" "}
+              <button onClick={() => eliminarDelCarrito(index)}>❌</button>
+            </li>
+          ))}
+        </ul>
+      )}
+
+      <h4>Total: ${total.toFixed(2)}</h4>
+      {carrito.length > 0 && <button onClick={checkout}>Finalizar compra</button>}
+    </div>
+  );
 }
+
+export default Tienda;
