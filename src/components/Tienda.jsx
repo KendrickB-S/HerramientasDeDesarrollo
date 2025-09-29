@@ -22,5 +22,21 @@ function Tienda() {
       .then((data) => setProductos(data))
       .catch((error) => console.error("Error cargando productos:", error));
   }, []);
+  const agregarAlCarrito = (producto) => {
+    setCarrito([...carrito, producto]);
+  };
+
+  const eliminarDelCarrito = (index) => {
+    const nuevoCarrito = carrito.filter((_, i) => i !== index);
+    setCarrito(nuevoCarrito);
+  };
+
+  const total = carrito.reduce((sum, item) => sum + item.price, 0);
+
+  const checkout = () => {
+    alert("¡Compra realizada con éxito!");
+    setCarrito([]);
+    localStorage.removeItem("carrito");
+  };
 
 }
