@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function Tienda() {
   const [productos, setProductos] = useState([]);
   const [carrito, setCarrito] = useState([]);
+  const [categorias, setCategorias] = useState([]);
+  const [categoriaSeleccionada, setCategoriaSeleccionada] = useState("all");
 
   // Cargar carrito desde localStorage
   useEffect(() => {
@@ -15,29 +18,68 @@ function Tienda() {
     localStorage.setItem("carrito", JSON.stringify(carrito));
   }, [carrito]);
 
-  // Obtener productos de la API
+  // Obtener productos y categorías de la API
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
       .then((res) => res.json())
-      .then((data) => setProductos(data))
+      .then((data) => {
+        setProductos(data);
+        const cats = ["all", ...new Set(data.map((p) => p.category))];
+        setCategorias(cats);
+      })
       .catch((error) => console.error("Error cargando productos:", error));
   }, []);
+
+  // Filtrar productos
+  const productosFiltrados =
+    categoriaSeleccionada === "all"
+      ? productos
+      : productos.filter((p) => p.category === categoriaSeleccionada);
+
+  // Agregar producto al carrito con cantidad
   const agregarAlCarrito = (producto) => {
-    setCarrito([...carrito, producto]);
+    const existe = carrito.find((item) => item.id === producto.id);
+    if (existe) {
+      setCarrito(
+        carrito.map((item) =>
+          item.id === producto.id
+            ? { ...item, cantidad: item.cantidad + 1 }
+            : item
+        )
+      );
+    } else {
+      setCarrito([...carrito, { ...producto, cantidad: 1 }]);
+    }
   };
 
-  const eliminarDelCarrito = (index) => {
-    const nuevoCarrito = carrito.filter((_, i) => i !== index);
-    setCarrito(nuevoCarrito);
+  // Eliminar producto del carrito
+  const eliminarDelCarrito = (id) => {
+    setCarrito(carrito.filter((item) => item.id !== id));
   };
 
-  const total = carrito.reduce((sum, item) => sum + item.price, 0);
+  // Cambiar cantidad
+  const cambiarCantidad = (id, nuevaCantidad) => {
+    if (nuevaCantidad <= 0) {
+      eliminarDelCarrito(id);
+    } else {
+      setCarrito(
+        carrito.map((item) =>
+          item.id === id ? { ...item, cantidad: nuevaCantidad } : item
+        )
+      );
+    }
+  };
+
+  // Calcular total
+  const total = carrito.reduce((sum, item) => sum + item.price * item.cantidad, 0);
 
   const checkout = () => {
-    alert("¡Compra realizada con éxito!");
+    alert(" ¡Compra realizada con éxito!");
     setCarrito([]);
     localStorage.removeItem("carrito");
   };
+
+
  return (
     <div style={{ padding: "20px" }}>
       <h2>Mini Tienda</h2>
