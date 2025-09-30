@@ -15,6 +15,7 @@ import Calendario from './components/Calendario';
 import Mapa from "./components/Mapa";
 import MapaGoogle from "./components/Mapagoogle";
 import Notas from './components/Notas';
+import Tienda from './components/Tienda';
 
 
 
@@ -39,6 +40,7 @@ function App() {
           <Link to="/mapa" className="nav-link p-2">Mapa</Link>
           <Link to="/mapagoogle" className="nav-link p-2">Mapa Google</Link>
           <Link to="/notas" className="nav-link p-2">Notas</Link>
+          <Link to="/tienda" className="nav-link p-2">Tienda</Link>
 
         </nav>
 
@@ -58,6 +60,7 @@ function App() {
             <Route path="/mapa" element={<Mapa />} />
             <Route path="/mapagoogle" element={<MapaGoogle />} />
             <Route path="/notas" element={<Notas />} />
+            <Route path="/tienda" element={<Tienda />} />
 
           </Routes>
         </div>
