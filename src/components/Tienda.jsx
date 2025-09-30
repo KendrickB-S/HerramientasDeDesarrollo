@@ -104,18 +104,19 @@ function Tienda() {
       <div className="row">
         {productosFiltrados.map((producto) => (
           <div key={producto.id} className="col-md-4 mb-4">
-            <div className="card h-100 shadow-sm">
+            <div className="card shadow-sm" style={{ height: "380px" }}>
               <img
                 src={producto.image}
                 alt={producto.title}
                 className="card-img-top"
-                style={{ height: "200px", objectFit: "contain" }}
+                style={{ height: "170px", objectFit: "contain", padding: "16px" }} // ← padding agregado
               />
-              <div className="card-body d-flex flex-column">
-                <h6 className="card-title">{producto.title}</h6>
-                <p className="text-muted">${producto.price.toFixed(2)}</p>
+              <div className="card-body d-flex flex-column" style={{ minHeight: 0 }}>
+                <h6 className="card-title" style={{ flexGrow: 0 }}>{producto.title}</h6>
+                <p className="text-muted" style={{ flexGrow: 0 }}>${producto.price.toFixed(2)}</p>
+                <div style={{ flexGrow: 1 }}></div>
                 <button
-                  className="btn btn-primary mt-auto"
+                  className="btn btn-primary mt-2"
                   onClick={() => agregarAlCarrito(producto)}
                 >
                   Agregar al carrito
