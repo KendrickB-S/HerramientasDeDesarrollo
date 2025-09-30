@@ -81,39 +81,106 @@ function Tienda() {
 
 
  return (
-    <div style={{ padding: "20px" }}>
-      <h2>Mini Tienda</h2>
+    <div className="container my-4">
+      <h2 className="mb-4"> Mini Tienda Avanzada</h2>
 
-      <h3>Productos</h3>
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "20px" }}>
-        {productos.map((producto) => (
-          <div key={producto.id} style={{ border: "1px solid #ccc", padding: "10px" }}>
-            <img src={producto.image} alt={producto.title} style={{ width: "100px", height: "100px", objectFit: "contain" }} />
-            <h4>{producto.title}</h4>
-            <p>${producto.price}</p>
-            <button onClick={() => agregarAlCarrito(producto)}>Agregar al carrito</button>
+      {/* Filtro por categoría */}
+      <div className="mb-3">
+        <label className="form-label">Filtrar por categoría:</label>
+        <select
+          className="form-select"
+          value={categoriaSeleccionada}
+          onChange={(e) => setCategoriaSeleccionada(e.target.value)}
+        >
+          {categorias.map((cat, i) => (
+            <option key={i} value={cat}>
+              {cat === "all" ? "Todas" : cat}
+            </option>
+          ))}
+        </select>
+      </div>
+
+      {/* Lista de productos */}
+      <div className="row">
+        {productosFiltrados.map((producto) => (
+          <div key={producto.id} className="col-md-4 mb-4">
+            <div className="card h-100 shadow-sm">
+              <img
+                src={producto.image}
+                alt={producto.title}
+                className="card-img-top"
+                style={{ height: "200px", objectFit: "contain" }}
+              />
+              <div className="card-body d-flex flex-column">
+                <h6 className="card-title">{producto.title}</h6>
+                <p className="text-muted">${producto.price.toFixed(2)}</p>
+                <button
+                  className="btn btn-primary mt-auto"
+                  onClick={() => agregarAlCarrito(producto)}
+                >
+                  Agregar al carrito
+                </button>
+              </div>
+            </div>
           </div>
         ))}
       </div>
 
       <hr />
 
-      <h3>🛒 Carrito</h3>
+      {/* Carrito */}
+      <h3> Carrito</h3>
       {carrito.length === 0 ? (
         <p>El carrito está vacío.</p>
       ) : (
-        <ul>
-          {carrito.map((item, index) => (
-            <li key={index}>
-              {item.title} - ${item.price.toFixed(2)}{" "}
-              <button onClick={() => eliminarDelCarrito(index)}>❌</button>
-            </li>
-          ))}
-        </ul>
+        <table className="table">
+          <thead>
+            <tr>
+              <th>Producto</th>
+              <th>Precio</th>
+              <th>Cantidad</th>
+              <th>Subtotal</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            {carrito.map((item) => (
+              <tr key={item.id}>
+                <td>{item.title}</td>
+                <td>${item.price.toFixed(2)}</td>
+                <td>
+                  <input
+                    type="number"
+                    value={item.cantidad}
+                    min="1"
+                    onChange={(e) =>
+                      cambiarCantidad(item.id, parseInt(e.target.value))
+                    }
+                    className="form-control"
+                    style={{ width: "80px" }}
+                  />
+                </td>
+                <td>${(item.price * item.cantidad).toFixed(2)}</td>
+                <td>
+                  <button
+                    className="btn btn-danger btn-sm"
+                    onClick={() => eliminarDelCarrito(item.id)}
+                  >
+                    Eliminar
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       )}
 
       <h4>Total: ${total.toFixed(2)}</h4>
-      {carrito.length > 0 && <button onClick={checkout}>Finalizar compra</button>}
+      {carrito.length > 0 && (
+        <button className="btn btn-success" onClick={checkout}>
+          Finalizar compra
+        </button>
+      )}
     </div>
   );
 }
