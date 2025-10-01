@@ -23,7 +23,7 @@ function Gastos() {
     localStorage.setItem("gastos", JSON.stringify(gastos));
     calcularRestante();
   }, [presupuesto, gastos]);
-  
+
  // ---- Calcular restante
   const calcularRestante = () => {
     const totalGastado = gastos.reduce((sum, g) => sum + g.monto, 0);
@@ -46,5 +46,21 @@ function Gastos() {
     setDescripcion("");
     setMonto("");
   };
+
+  //----Eliminar gasto
+  const eliminarGasto = (id) => {
+    setGastos(gastos.filter((g) => g.id !== id));
+  };
+
+  // ---- reiniciar todo
+  const reiniciar = () => {
+    if (window.confirm("¿Estás seguro de reiniciar el presupuesto y gastos?")) {
+        setPresupuesto(0);
+        setGastos([]);
+        localStorage.removeItem("presupuesto");
+        localStorage.removeItem("gastos");
+    }
+};
+
 
 }
