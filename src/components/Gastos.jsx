@@ -23,6 +23,28 @@ function Gastos() {
     localStorage.setItem("gastos", JSON.stringify(gastos));
     calcularRestante();
   }, [presupuesto, gastos]);
+  
+ // ---- Calcular restante
+  const calcularRestante = () => {
+    const totalGastado = gastos.reduce((sum, g) => sum + g.monto, 0);
+    setRestante(presupuesto - totalGastado);
+  };
 
+  // ---- Manejo de agregar gasto
+  const agregarGasto = (e) => {
+    e.preventDefault();
+    if (!descripcion || !monto) {
+      alert("Por favor completa todos los campos");
+      return;
+    }
+    const nuevoGasto = {
+      id: Date.now(),
+      descripcion,
+      monto: parseFloat(monto),
+    };
+    setGastos([...gastos, nuevoGasto]);
+    setDescripcion("");
+    setMonto("");
+  };
 
 }
