@@ -64,7 +64,7 @@ function Gastos() {
 
  return (
     <div className="container my-4">
-      <h2 className="text-center">💰 Gestor de Gastos Personales</h2>
+      <h2 className="text-center">Gestor de Gastos Personales</h2>
 
       {/* Definir presupuesto */}
       {presupuesto === 0 ? (
