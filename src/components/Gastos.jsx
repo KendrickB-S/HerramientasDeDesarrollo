@@ -106,5 +106,63 @@ function Gastos() {
               </div>
             </div>
           </div>
+           {/* Formulario gasto */}
+          <div className="card p-3 shadow mt-4">
+            <h4>Agregar gasto</h4>
+            <form onSubmit={agregarGasto}>
+              <input
+                type="text"
+                className="form-control my-2"
+                placeholder="Descripción"
+                value={descripcion}
+                onChange={(e) => setDescripcion(e.target.value)}
+              />
+              <input
+                type="number"
+                className="form-control my-2"
+                placeholder="Monto"
+                value={monto}
+                onChange={(e) => setMonto(e.target.value)}
+              />
+              <button className="btn btn-primary">Agregar</button>
+            </form>
+          </div>
 
+          {/* Lista de gastos */}
+          <div className="card p-3 shadow mt-4">
+            <h4>Lista de gastos</h4>
+            {gastos.length === 0 ? (
+              <p>No hay gastos aún.</p>
+            ) : (
+              <ul className="list-group">
+                {gastos.map((g) => (
+                  <li
+                    key={g.id}
+                    className="list-group-item d-flex justify-content-between align-items-center"
+                  >
+                    {g.descripcion} - ${g.monto.toFixed(2)}
+                    <button
+                      className="btn btn-danger btn-sm"
+                      onClick={() => eliminarGasto(g.id)}
+                    >
+                      Eliminar
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+
+          {/* Botón reiniciar */}
+          <div className="text-center mt-4">
+            <button className="btn btn-outline-danger" onClick={reiniciar}>
+              Reiniciar todo
+            </button>
+          </div>
+        </>
+      )}
+    </div>
+  );
 }
+
+export default Gastos;
