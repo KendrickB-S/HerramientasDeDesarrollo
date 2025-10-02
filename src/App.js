@@ -16,6 +16,7 @@ import Mapa from "./components/Mapa";
 import MapaGoogle from "./components/Mapagoogle";
 import Notas from './components/Notas';
 import Tienda from './components/Tienda';
+import Gastos from './components/Gastos';
 
 
 
@@ -41,6 +42,7 @@ function App() {
           <Link to="/mapagoogle" className="nav-link p-2">Mapa Google</Link>
           <Link to="/notas" className="nav-link p-2">Notas</Link>
           <Link to="/tienda" className="nav-link p-2">Tienda</Link>
+          <Link to="/gastos" className="nav-link p-2">Gastos</Link>
 
         </nav>
 
@@ -61,6 +63,7 @@ function App() {
             <Route path="/mapagoogle" element={<MapaGoogle />} />
             <Route path="/notas" element={<Notas />} />
             <Route path="/tienda" element={<Tienda />} />
+            <Route path="/gastos" element={<Gastos />} />
 
           </Routes>
         </div>
