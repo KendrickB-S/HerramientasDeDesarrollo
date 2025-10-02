@@ -62,5 +62,49 @@ function Gastos() {
     }
 };
 
+ return (
+    <div className="container my-4">
+      <h2 className="text-center">💰 Gestor de Gastos Personales</h2>
+
+      {/* Definir presupuesto */}
+      {presupuesto === 0 ? (
+        <div className="card p-3 shadow mt-4">
+          <h4>Definir presupuesto inicial</h4>
+          <input
+            type="number"
+            className="form-control my-2"
+            placeholder="Ingresa tu presupuesto"
+            onChange={(e) => setPresupuesto(parseFloat(e.target.value))}
+          />
+        </div>
+      ) : (
+        <>
+          {/* Resumen */}
+          <div className="row mt-4">
+            <div className="col-md-4">
+              <div className="card p-3 bg-primary text-white shadow">
+                <h5>Presupuesto</h5>
+                <h3>${presupuesto.toFixed(2)}</h3>
+              </div>
+            </div>
+            <div className="col-md-4">
+              <div className="card p-3 bg-warning text-dark shadow">
+                <h5>Gastado</h5>
+                <h3>
+                  ${gastos.reduce((sum, g) => sum + g.monto, 0).toFixed(2)}
+                </h3>
+              </div>
+            </div>
+            <div className="col-md-4">
+              <div
+                className={`card p-3 shadow ${
+                  restante < 0 ? "bg-danger text-white" : "bg-success text-white"
+                }`}
+              >
+                <h5>Restante</h5>
+                <h3>${restante.toFixed(2)}</h3>
+              </div>
+            </div>
+          </div>
 
 }
