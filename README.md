@@ -2,7 +2,7 @@
 ## enlace de la web
 ---
 ## Ctrl + clic para abrir en nueva pestaña
-### <a href="https://herramientas-de-desarrollo.vercel.app/" target="_blank">Proyecto Herramientas de Desarrollo</a>
+### <a href="https://herramientas-de-desarrollo.vercel.app/">Proyecto Herramientas de Desarrollo</a>
 ________________________________________
 # Avance 1
 _______________________________________
@@ -44,12 +44,12 @@ __________________________________________
 ________________________________________
 ### cambios esperados para este avance 
 
-### notas basico
+### notas basico (realizado)
 crear notas
 editar notas
 guardar en localStorage
 
-### E-commerce básico.
+### E-commerce básico. (realizado)
 
 
 Catálogo de productos, carrito de compras, checkout.
@@ -66,11 +66,12 @@ Autenticación (Firebase/Auth0).
 
 Publicaciones, likes y comentarios.
 
-### Gestor de gastos personales.
+### Gestor de gastos personales. (realizado)
 
 Presupuesto, lista de gastos y total restante.
 
 LocalStorage para guardar datos.
+
 
 ### App de traducción de textos
 
@@ -81,6 +82,7 @@ Funcionalidad:
 El usuario ingresa un texto y selecciona idioma destino.
 
 Se muestra la traducción en tiempo real.
+
 
 ### Reconocimiento de voz a texto
 

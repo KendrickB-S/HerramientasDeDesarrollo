@@ -1,168 +1,147 @@
 import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-function Gastos() {
-  const [presupuesto, setPresupuesto] = useState(0);
-  const [gastos, setGastos] = useState([]);
-  const [descripcion, setDescripcion] = useState("");
-  const [monto, setMonto] = useState("");
-  const [restante, setRestante] = useState(0);
+import {PieChart,Pie,Cell,Tooltip,BarChart,Bar,XAxis,YAxis,CartesianGrid,Legend,} from "recharts";
 
-   // ---- Cargar datos desde localStorage
-  useEffect(() => {
-    const presupuestoGuardado = JSON.parse(localStorage.getItem("presupuesto")) || 0;
-    const gastosGuardados = JSON.parse(localStorage.getItem("gastos")) || [];
+// Colores para las categorías
+const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042", "#FF4444"];
 
-    setPresupuesto(presupuestoGuardado);
-    setGastos(gastosGuardados);
-  }, []);
+function App() {
+  const [presupuesto, setPresupuesto] = useState(
+    () => JSON.parse(localStorage.getItem("presupuesto")) || 0
+  );
+  const [gastos, setGastos] = useState(
+    () => JSON.parse(localStorage.getItem("gastos")) || []
+  );
+  const [nuevoGasto, setNuevoGasto] = useState({
+    descripcion: "",
+    monto: "",
+    categoria: "Comida",
+  });
 
-  // ---- Guardar en localStorage cuando cambien
+  // Guardar en localStorage
   useEffect(() => {
     localStorage.setItem("presupuesto", JSON.stringify(presupuesto));
     localStorage.setItem("gastos", JSON.stringify(gastos));
-    calcularRestante();
   }, [presupuesto, gastos]);
 
- // ---- Calcular restante
-  const calcularRestante = () => {
-    const totalGastado = gastos.reduce((sum, g) => sum + g.monto, 0);
-    setRestante(presupuesto - totalGastado);
+  // Calcular totales
+  const totalGastado = gastos.reduce((acc, g) => acc + Number(g.monto), 0);
+  const restante = presupuesto - totalGastado;
+
+  // Manejar formulario
+  const handleChange = (e) => {
+    setNuevoGasto({ ...nuevoGasto, [e.target.name]: e.target.value });
   };
 
-  // ---- Manejo de agregar gasto
   const agregarGasto = (e) => {
     e.preventDefault();
-    if (!descripcion || !monto) {
-      alert("Por favor completa todos los campos");
-      return;
-    }
-    const nuevoGasto = {
-      id: Date.now(),
-      descripcion,
-      monto: parseFloat(monto),
-    };
-    setGastos([...gastos, nuevoGasto]);
-    setDescripcion("");
-    setMonto("");
+    if (!nuevoGasto.descripcion || !nuevoGasto.monto) return;
+    setGastos([...gastos, { ...nuevoGasto, monto: Number(nuevoGasto.monto) }]);
+    setNuevoGasto({ descripcion: "", monto: "", categoria: "Comida" });
   };
 
-  //----Eliminar gasto
-  const eliminarGasto = (id) => {
-    setGastos(gastos.filter((g) => g.id !== id));
-  };
+  // Agrupar gastos por categoría
+  const categorias = gastos.reduce((acc, g) => {
+    acc[g.categoria] = (acc[g.categoria] || 0) + g.monto;
+    return acc;
+  }, {});
 
-  // ---- reiniciar todo
-  const reiniciar = () => {
-    if (window.confirm("¿Estás seguro de reiniciar el presupuesto y gastos?")) {
-        setPresupuesto(0);
-        setGastos([]);
-        localStorage.removeItem("presupuesto");
-        localStorage.removeItem("gastos");
-    }
-};
+  const dataGrafico = Object.keys(categorias).map((cat, index) => ({
+    name: cat,
+    value: categorias[cat],
+  }));
 
- return (
-    <div className="container my-4">
-      <h2 className="text-center">Gestor de Gastos Personales</h2>
+  return (
+    <div style={{ fontFamily: "Arial, sans-serif", padding: "20px" }}>
+      <h1>Gestor de Gastos Personales</h1>
 
-      {/* Definir presupuesto */}
-      {presupuesto === 0 ? (
-        <div className="card p-3 shadow mt-4">
-          <h4>Definir presupuesto inicial</h4>
-          <input
-            type="number"
-            className="form-control my-2"
-            placeholder="Ingresa tu presupuesto"
-            onChange={(e) => setPresupuesto(parseFloat(e.target.value))}
-          />
-        </div>
-      ) : (
-        <>
-          {/* Resumen */}
-          <div className="row mt-4">
-            <div className="col-md-4">
-              <div className="card p-3 bg-primary text-white shadow">
-                <h5>Presupuesto</h5>
-                <h3>${presupuesto.toFixed(2)}</h3>
-              </div>
-            </div>
-            <div className="col-md-4">
-              <div className="card p-3 bg-warning text-dark shadow">
-                <h5>Gastado</h5>
-                <h3>
-                  ${gastos.reduce((sum, g) => sum + g.monto, 0).toFixed(2)}
-                </h3>
-              </div>
-            </div>
-            <div className="col-md-4">
-              <div
-                className={`card p-3 shadow ${
-                  restante < 0 ? "bg-danger text-white" : "bg-success text-white"
-                }`}
-              >
-                <h5>Restante</h5>
-                <h3>${restante.toFixed(2)}</h3>
-              </div>
-            </div>
-          </div>
-           {/* Formulario gasto */}
-          <div className="card p-3 shadow mt-4">
-            <h4>Agregar gasto</h4>
-            <form onSubmit={agregarGasto}>
-              <input
-                type="text"
-                className="form-control my-2"
-                placeholder="Descripción"
-                value={descripcion}
-                onChange={(e) => setDescripcion(e.target.value)}
-              />
-              <input
-                type="number"
-                className="form-control my-2"
-                placeholder="Monto"
-                value={monto}
-                onChange={(e) => setMonto(e.target.value)}
-              />
-              <button className="btn btn-primary">Agregar</button>
-            </form>
-          </div>
+      {/* Presupuesto */}
+      <div style={{ marginBottom: "20px" }}>
+        <h2>Presupuesto: S/. {presupuesto}</h2>
+        <input
+          type="number"
+          placeholder="Definir presupuesto"
+          onChange={(e) => setPresupuesto(Number(e.target.value))}
+        />
+        <p>Total gastado: <b>S/. {totalGastado}</b></p>
+        <p>Restante: <b style={{ color: restante < 0 ? "red" : "green" }}>S/. {restante}</b></p>
+      </div>
 
-          {/* Lista de gastos */}
-          <div className="card p-3 shadow mt-4">
-            <h4>Lista de gastos</h4>
-            {gastos.length === 0 ? (
-              <p>No hay gastos aún.</p>
-            ) : (
-              <ul className="list-group">
-                {gastos.map((g) => (
-                  <li
-                    key={g.id}
-                    className="list-group-item d-flex justify-content-between align-items-center"
-                  >
-                    {g.descripcion} - ${g.monto.toFixed(2)}
-                    <button
-                      className="btn btn-danger btn-sm"
-                      onClick={() => eliminarGasto(g.id)}
-                    >
-                      Eliminar
-                    </button>
-                  </li>
-                ))}
-              </ul>
-            )}
-          </div>
+      {/* Formulario de gasto */}
+      <form onSubmit={agregarGasto} style={{ marginBottom: "20px" }}>
+        <input
+          type="text"
+          name="descripcion"
+          placeholder="Descripción"
+          value={nuevoGasto.descripcion}
+          onChange={handleChange}
+          required
+        />
+        <input
+          type="number"
+          name="monto"
+          placeholder="Monto"
+          value={nuevoGasto.monto}
+          onChange={handleChange}
+          required
+        />
+        <select
+          name="categoria"
+          value={nuevoGasto.categoria}
+          onChange={handleChange}
+        >
+          <option value="Comida">Comida</option>
+          <option value="Transporte">Transporte</option>
+          <option value="Vivienda">Vivienda</option>
+          <option value="Ocio">Ocio</option>
+          <option value="Otros">Otros</option>
+        </select>
+        <button type="submit">Agregar gasto</button>
+      </form>
 
-          {/* Botón reiniciar */}
-          <div className="text-center mt-4">
-            <button className="btn btn-outline-danger" onClick={reiniciar}>
-              Reiniciar todo
-            </button>
-          </div>
-        </>
-      )}
+      {/* Lista de gastos */}
+      <h3>Lista de gastos</h3>
+      <ul>
+        {gastos.map((g, i) => (
+          <li key={i}>
+            {g.descripcion} - S/. {g.monto} ({g.categoria})
+          </li>
+        ))}
+      </ul>
+
+      {/* Gráfico circular */}
+      <h3>Distribución de gastos</h3>
+      <PieChart width={400} height={300}>
+        <Pie
+          data={dataGrafico}
+          cx="50%"
+          cy="50%"
+          labelLine={false}
+          outerRadius={100}
+          fill="#8884d8"
+          dataKey="value"
+          label
+        >
+          {dataGrafico.map((entry, index) => (
+            <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+          ))}
+        </Pie>
+        <Tooltip />
+      </PieChart>
+
+      {/* Gráfico de barras */}
+      <h3>Gastos por categoría</h3>
+      <BarChart width={500} height={300} data={dataGrafico}>
+        <CartesianGrid strokeDasharray="3 3" />
+        <XAxis dataKey="name" />
+        <YAxis />
+        <Tooltip />
+        <Legend />
+        <Bar dataKey="value" fill="#82ca9d" />
+      </BarChart>
     </div>
   );
 }
 
-export default Gastos;
+export default App;
