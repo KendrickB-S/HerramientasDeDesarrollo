@@ -138,7 +138,11 @@ function App() {
         <YAxis />
         <Tooltip />
         <Legend />
-        <Bar dataKey="value" fill="#82ca9d" />
+        <Bar dataKey="value">
+                {dataGrafico.map((entry, index) => (
+              <Cell key={`cell-bar-${index}`} fill={COLORS[index % COLORS.length]} />
+          ))}
+        </Bar>
       </BarChart>
     </div>
   );
