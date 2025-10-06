@@ -1,14 +1,12 @@
 
 ## enlace de la web
----
 ## Ctrl + clic para abrir en nueva pestaña
 ### <a href="https://herramientas-de-desarrollo.vercel.app/">Proyecto Herramientas de Desarrollo</a>
-________________________________________
+___
 # Avance 1
-_______________________________________
-
+___
 ### cambios realizados en el proyecto
----------------------------------------
+___
 
 ### Página de Noticias con API
 
