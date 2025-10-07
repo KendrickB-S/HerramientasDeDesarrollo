@@ -16,5 +16,12 @@ nos sirve para cambiar a la rama creada
 
 ___
 
+### git commi -m "mensaje"
+Git necesita conocer el historial de cambios y mostrar a todos los codificadores quién hizo qué en cada momento. "commit" es como registrar los cambios en la memoria del proyecto.
+
+___
+
 ### git push origin nueva_rama
 sirve para subir la rama local llamada nueva_rama a un repositorio remoto
+
+___
