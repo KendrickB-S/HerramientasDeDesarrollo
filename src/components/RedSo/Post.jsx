@@ -50,4 +50,32 @@ return (
           >
             ❤️ {post.likes}
           </button>
+          <button
+            className="btn btn-sm btn-outline-secondary"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target={`#comments-${post.id}`}
+            aria-expanded="false"
+            aria-controls={`comments-${post.id}`}
+          >
+            💬 {post.comments.length}
+          </button>
+        </div>
+
+        {/* comentarios (collapse) */}
+        <div className="collapse mt-3" id={`comments-${post.id}`}>
+          <div className="card card-body">
+            {post.comments.length === 0 ? (
+              <p className="text-muted">Sé el primero en comentar</p>
+            ) : (
+              post.comments.map((c) => (
+                <div key={c.id} className="mb-2">
+                  <div className="d-flex justify-content-between">
+                    <div><strong>Usuario</strong> <small className="text-muted">• {new Date(c.createdAt).toLocaleString()}</small></div>
+                  </div>
+                  <div>{c.text}</div>
+                </div>
+              ))
+            )}
+
 
