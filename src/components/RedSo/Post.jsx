@@ -21,4 +21,33 @@ export default function Post({ post, onToggleLike, onAddComment, onDeletePost })
     });
     setComentario("");
   };
-}
+
+return (
+    <div className="card mb-3">
+      <div className="card-body">
+        <div className="d-flex justify-content-between">
+          <div>
+            <h6 className="mb-1">{post.author}</h6>
+            <small className="text-muted">{timeAgo(post.createdAt)} • {new Date(post.createdAt).toLocaleString()}</small>
+          </div>
+          <div>
+            <button className="btn btn-sm btn-outline-danger" onClick={() => onDeletePost(post.id)}>Eliminar</button>
+          </div>
+        </div>
+
+        <p className="mt-3">{post.content}</p>
+
+        {post.image && (
+          <div className="mb-2">
+            <img src={post.image} alt="post" style={{ maxWidth: "100%", borderRadius: 8 }} />
+          </div>
+        )}
+
+        <div className="d-flex align-items-center gap-3 mt-2">
+          <button
+            className={`btn btn-sm ${post.liked ? "btn-primary" : "btn-outline-primary"}`}
+            onClick={() => onToggleLike(post.id)}
+          >
+            ❤️ {post.likes}
+          </button>
+
