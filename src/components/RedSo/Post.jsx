@@ -77,5 +77,20 @@ return (
                 </div>
               ))
             )}
+            <form onSubmit={submitComment} className="mt-2 d-flex gap-2">
+              <input
+                className="form-control"
+                placeholder="Escribe un comentario..."
+                value={comentario}
+                onChange={(e) => setComentario(e.target.value)}
+              />
+              <button className="btn btn-primary" type="submit">Comentar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 
