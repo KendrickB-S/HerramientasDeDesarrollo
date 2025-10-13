@@ -20,8 +20,8 @@ export default function CreatePost({ onCreate }) {
     setTexto("");
     setImagenUrl("");
   };
-  
-return (
+
+  return (
     <div className="card mb-3">
       <div className="card-body">
         <h5 className="card-title">Crear publicación</h5>
