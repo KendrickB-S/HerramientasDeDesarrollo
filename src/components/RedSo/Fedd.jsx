@@ -55,5 +55,27 @@ export default function Feed() {
     if (!window.confirm("¿Eliminar publicación?")) return;
     setPosts(posts.filter(p => p.id !== postId));
   };
+return (
+    <div className="container py-4">
+      <div className="row">
+        <div className="col-md-8 offset-md-2">
+          <CreatePost onCreate={handleCreate} />
 
+          {posts.length === 0 ? (
+            <p className="text-muted">No hay publicaciones aún</p>
+          ) : (
+            posts.map(post => (
+              <Post
+                key={post.id}
+                post={post}
+                onToggleLike={toggleLike}
+                onAddComment={addComment}
+                onDeletePost={deletePost}
+              />
+            ))
+          )}
+        </div>
+      </div>
+    </div>
+  );
 }
