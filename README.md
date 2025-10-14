@@ -57,10 +57,10 @@ Manejo de contexto (useContext) o Redux.
 
 
 
-### Clon de redes sociales (mini Twitter o Instagram).
+### Clon de redes sociales (mini Twitter o Instagram).(Realizado)
 
 
-Autenticación (Firebase/Auth0).
+Autenticación (Firebase/Auth0).(futura mejora)
 
 Publicaciones, likes y comentarios.
 
