@@ -39,7 +39,7 @@ export default function CreatePost({ onCreate }) {
             value={imagenUrl}
             onChange={(e) => setImagenUrl(e.target.value)}
           />
-          <div className="d-flex justify-content-end">
+          <div className="post justify-content-end">
             <button className="btn btn-primary" type="submit">Publicar</button>
           </div>
         </form>

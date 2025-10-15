@@ -25,7 +25,7 @@ export default function Post({ post, onToggleLike, onAddComment, onDeletePost })
 return (
     <div className="card mb-3">
       <div className="card-body">
-        <div className="d-flex justify-content-between">
+        <div className="b-flex justify-content-between">
           <div>
             <h6 className="mb-1">{post.author}</h6>
             <small className="text-muted">{timeAgo(post.createdAt)} • {new Date(post.createdAt).toLocaleString()}</small>
@@ -43,7 +43,7 @@ return (
           </div>
         )}
 
-        <div className="d-flex align-items-center gap-3 mt-2">
+        <div className="post align-items-center gap-3 mt-2">
           <button
             className={`btn btn-sm ${post.liked ? "btn-primary" : "btn-outline-primary"}`}
             onClick={() => onToggleLike(post.id)}

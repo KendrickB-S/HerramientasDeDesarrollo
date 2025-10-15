@@ -5,6 +5,9 @@
   display: flex;
   height: 100vh; 
 }
+.post{
+  display: flex;
+}
 
 nav {
   width: 220px; 
