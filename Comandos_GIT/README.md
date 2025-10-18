@@ -68,4 +68,5 @@ Trello es una herramienta de gestión visual y colaboración en línea que permi
 ### Asana 
 
 Asana es una plataforma de gestión de proyectos y tareas que ayuda a los equipos a organizar su trabajo, colaborar y alcanzar sus objetivos de manera eficiente. Sirve para planificar proyectos, automatizar flujos de trabajo, hacer seguimiento del progreso, conectar el trabajo diario con los objetivos de la empresa y gestionar recursos. 
+
 ---
