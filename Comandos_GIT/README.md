@@ -49,3 +49,23 @@ ___
 Mantiene las ramas de release separadas de la rama principal, buscando una historia lineal mediante rebases constantes.
 * Estrategia de tres ramas (Dev/Staging/Prod):
 Utiliza un enfoque más lineal con ramas dedicadas para desarrollo (dev), pre-producción (staging) y producción (prod), alineándose con la entrega continua. 
+
+---
+# Herramientas de Gestión de actividades 
+---
+ ### Microsoft Projects
+
+MS Project es un software de gestión de proyectos de Microsoft que sirve para planificar, organizar y hacer seguimiento de proyectos de forma detallada. Se utiliza para crear cronogramas, asignar recursos, gestionar presupuestos y recursos, y realizar un seguimiento del progreso, siendo útil para proyectos de cualquier magnitud y en diversos sectores como la construcción o la tecnología. 
+
+---
+
+### Trello
+
+Trello es una herramienta de gestión visual y colaboración en línea que permite organizar proyectos y tareas mediante el método kanban, utilizando tableros, listas y tarjetas para visualizar el progreso y la asignación de responsabilidades. Sirve para planificar proyectos, gestionar el flujo de trabajo, mejorar la colaboración en equipo y hacer seguimiento del estado de las tareas, siendo útil para equipos, particulares y organizaciones de diversos tamaños. 
+
+---
+
+### Asana 
+
+Asana es una plataforma de gestión de proyectos y tareas que ayuda a los equipos a organizar su trabajo, colaborar y alcanzar sus objetivos de manera eficiente. Sirve para planificar proyectos, automatizar flujos de trabajo, hacer seguimiento del progreso, conectar el trabajo diario con los objetivos de la empresa y gestionar recursos. 
+---
