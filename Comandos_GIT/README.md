@@ -70,3 +70,21 @@ Trello es una herramienta de gestión visual y colaboración en línea que permi
 Asana es una plataforma de gestión de proyectos y tareas que ayuda a los equipos a organizar su trabajo, colaborar y alcanzar sus objetivos de manera eficiente. Sirve para planificar proyectos, automatizar flujos de trabajo, hacer seguimiento del progreso, conectar el trabajo diario con los objetivos de la empresa y gestionar recursos. 
 
 ---
+
+### ClickUp
+
+ClickUp es una herramienta de gestión de proyectos y tareas que reúne en un solo lugar la administración de proyectos, documentos, comunicación y flujos de trabajo. Permite organizar el trabajo en espacios, carpetas y listas, y ofrece múltiples vistas (como lista, tablero Kanban y Gantt) para visualizar las tareas, así como la capacidad de automatizar procesos y colabora en equipo. Sus herramientas incluyen la creación de tareas, asignación de prioridades, seguimiento del tiempo, integración con otras aplicaciones y generación de informes. 
+
+---
+
+### Todoist
+
+Todoist es una aplicación de productividad y gestión de tareas que sirve para organizar y priorizar actividades tanto en el ámbito personal como profesional. Su propósito es ayudar a las personas a organizar su vida y trabajo transfiriendo las tareas de la mente a una plataforma digital, permitiendo crear listas de tareas, establecer recordatorios y colaborar en proyectos de equipo. 
+
+---
+
+### Notion
+
+Notion es una herramienta de gestión de actividades muy versátil que combina gestión de proyectos, bases de datos, notas y colaboración en una sola plataforma, permitiendo a los usuarios personalizar flujos de trabajo y visualizar tareas de diversas maneras, como listas, tableros, calendarios o cronogramas. Permite unificar todo el trabajo del proyecto, desde la información y los borradores hasta las tareas y la colaboración en equipo, ahorrando tiempo y mejorando la productividad. 
+
+---
