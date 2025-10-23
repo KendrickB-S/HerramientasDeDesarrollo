@@ -108,3 +108,23 @@ La mayor fortaleza de ClickUp es su extrema flexibilidad y capacidad de personal
 Finalmente, una razón clave para su adopción es su robusto plan gratuito. El plan "Free Forever" de ClickUp es uno de los más generosos del mercado, ofreciendo tareas y miembros ilimitados, lo cual lo hace muy accesible para equipos pequeños, freelancers o para uso personal. En resumen, ClickUp es ideal para quienes buscan una herramienta única, adaptable y escalable que pueda moldearse a sus procesos exactos.
 
 ---
+
+### Heramienta elegida Notion
+
+ventajas clave de usar Notion:
+
+1.  **Espacio de trabajo todo en uno:** Notion combina múltiples herramientas en una sola aplicación. Puede reemplazar a tus aplicaciones de notas (como Evernote), gestión de tareas (como Trello o Asana), wikis (como Confluence) y bases de datos (como Airtable o Google Sheets). Esto centraliza tu información y reduce la necesidad de cambiar entre diferentes plataformas.
+
+2.  **Flexibilidad (Bloques):** Notion utiliza un sistema de "bloques" que te permite construir páginas exactamente como las necesitas. Un bloque puede ser texto, una imagen, una tabla, una lista de tareas, un calendario, un fragmento de código, un video incrustado, y mucho más. Puedes mezclar y combinar estos bloques libremente.
+
+3.  **Bases de datos potentes:** Esta es una de las características más destacadas. Puedes crear bases de datos personalizadas para casi cualquier cosa (tareas, proyectos, clientes, recetas, libros, etc.). Lo mejor es que puedes ver la misma base de datos de diferentes maneras (vistas), como una tabla, un tablero Kanban, un calendario, una lista o una galería, sin duplicar la información.
+
+4.  **Colaboración en tiempo real:** Puedes trabajar en la misma página con otras personas simultáneamente. Permite dejar comentarios, mencionar a compañeros (con `@`) para notificarles, y establecer diferentes niveles de permisos (lectura, comentario, edición, acceso total).
+
+5.  **Plantillas (Templates):** Notion ofrece una gran cantidad de plantillas pre-diseñadas para diferentes usos (gestión de proyectos, seguimiento de hábitos, apuntes de clase, hoja de ruta de productos, etc.). Además, la comunidad crea y comparte miles de plantillas que puedes duplicar y adaptar a tus necesidades.
+
+6.  **Estética y personalización:** Te permite crear páginas visualmente atractivas y limpias. Puedes añadir iconos, imágenes de portada, cambiar la tipografía (limitado) y organizar el diseño en columnas, lo que hace que el trabajo sea más agradable visualmente.
+
+7.  **Multiplataforma y sincronización:** Funciona en la web, como aplicación de escritorio (Windows y Mac) y en dispositivos móviles (iOS y Android). Tus datos se sincronizan automáticamente en todas las plataformas.
+
+8.  **Integraciones y API:** Se integra con muchas otras herramientas (como Slack, Google Drive, Figma, GitHub) y su API permite a los desarrolladores crear automatizaciones y conexiones personalizadas.
