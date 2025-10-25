@@ -7,6 +7,7 @@ ___
 ## enlace de Notion 
 ## trl + clic para abrir en nueva pestaña
 ###  <a href="https://www.notion.so/Herramientas-de-Desarrollo-293bc2f37959804eb27eeaa08eda53e8?source=copy_link">Herramienta de Gestion de Actividades</a>
+-tablas creadas en Notion
 # Avance 1
 ___
 ### cambios realizados en el proyecto
