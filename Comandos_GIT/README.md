@@ -128,3 +128,22 @@ ventajas clave de usar Notion:
 7.  **Multiplataforma y sincronización:** Funciona en la web, como aplicación de escritorio (Windows y Mac) y en dispositivos móviles (iOS y Android). Tus datos se sincronizan automáticamente en todas las plataformas.
 
 8.  **Integraciones y API:** Se integra con muchas otras herramientas (como Slack, Google Drive, Figma, GitHub) y su API permite a los desarrolladores crear automatizaciones y conexiones personalizadas.
+
+---
+# Importancia de los Tickets en la gestión de actividades
+
+Los tickets son cruciales en la gestión de accidentes de software porque centralizan, rastrean y gestionan las incidencias de forma eficiente, permitiendo la asignación de tareas, la monitorización del progreso y la mejora continua del servicio. Son fundamentales para mantener la organización, asegurar la resolución oportuna de problemas, mejorar la experiencia del usuario y analizar el rendimiento del equipo. 
+Beneficios clave de usar tickets en la gestión de software:
+1. **Centralización y organización:** Un ticket reúne toda la información relevante de un incidente en un solo lugar, evitando que los problemas se pierdan en correos electrónicos o chats.
+
+2. **Seguimiento y monitorización:** Permiten rastrear el estado de cada problema, los tiempos de respuesta y asignación, facilitando la supervisión por parte de los líderes de equipo.
+
+3. **Resolución eficiente:** Al organizar las solicitudes y asignar tareas específicas, los equipos pueden resolver los problemas más rápidamente, reduciendo los tiempos de espera para los usuarios.
+
+4. **Asignación clara de responsabilidades:** Se puede asignar cada ticket a un miembro específico del equipo con una fecha límite, asegurando que se cumplan los plazos.
+
+5. **Mejora del servicio al cliente:** Al garantizar que ningún problema quede sin resolver y al proporcionar visibilidad sobre el estado del incidente, se mejora la satisfacción del usuario final.
+
+6. **Análisis de datos y mejora continua:** Los datos recopilados en los tickets permiten analizar la frecuencia de los problemas, identificar cuellos de botella y comprender la carga de trabajo del equipo para tomar mejores decisiones estratégicas.
+
+7. **Documentación y auditoría:** Cada ticket sirve como registro de las actividades y soluciones, lo cual es valioso para futuras referencias, auditorías y la documentación del sistema. 
