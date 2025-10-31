@@ -1,3 +1,4 @@
+// 1. Asegúrate de que 'useState' esté importado
 import React, { useState } from "react";
 
 function timeAgo(iso) {
@@ -10,6 +11,9 @@ function timeAgo(iso) {
 
 export default function Post({ post, onToggleLike, onAddComment, onDeletePost }) {
   const [comentario, setComentario] = useState("");
+  
+  // 2. NUEVO: Añade un estado para controlar la visibilidad
+  const [comentariosVisibles, setComentariosVisibles] = useState(false);
 
   const submitComment = (e) => {
     e.preventDefault();
@@ -50,34 +54,34 @@ return (
           >
             ❤️ {post.likes}
           </button>
+          
+          {/* 3. MODIFICADO: Quitamos los atributos 'data-bs-*' y añadimos un 'onClick' */}
           <button
             className="btn btn-sm btn-outline-secondary"
             type="button"
-            data-bs-toggle="collapse"
-            data-bs-target={`#comments-${post.id}`}
-            aria-expanded="false"
-            aria-controls={`comments-${post.id}`}
+            onClick={() => setComentariosVisibles(!comentariosVisibles)} // <-- NUEVO onClick
+            aria-expanded={comentariosVisibles} // <-- Opcional, pero bueno para accesibilidad
           >
             💬 {post.comments.length}
           </button>
         </div>
 
-        {/* comentarios (collapse) */}
-        <div className="collapse mt-3" id={`comments-${post.id}`}>
+        {/* 4. MODIFICADO: Controlamos la clase 'show' con el estado y quitamos el id */}
+        <div className={`collapse mt-3 ${comentariosVisibles ? 'show' : ''}`}>
           <div className="card card-body">
             {post.comments.length === 0 ? (
               <p className="text-muted">Sé el primero en comentar</p>
             ) : (
               post.comments.map((c) => (
-                <div key={c.id} className="mb-2">
-                  <div className="d-flex justify-content-between">
+                <div key={c.id} className="mb-3">
+                  <div className="b-flex justify-content-between">
                     <div><strong>Usuario</strong> <small className="text-muted">• {new Date(c.createdAt).toLocaleString()}</small></div>
                   </div>
                   <div>{c.text}</div>
                 </div>
               ))
             )}
-            <form onSubmit={submitComment} className="mt-2 d-flex gap-2">
+            <form onSubmit={submitComment} className="mt-2 b-flex gap-2">
               <input
                 className="form-control"
                 placeholder="Escribe un comentario..."
@@ -92,5 +96,3 @@ return (
     </div>
   );
 }
-
-
