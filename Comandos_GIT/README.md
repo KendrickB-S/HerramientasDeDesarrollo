@@ -147,3 +147,55 @@ Beneficios clave de usar tickets en la gestión de software:
 6. **Análisis de datos y mejora continua:** Los datos recopilados en los tickets permiten analizar la frecuencia de los problemas, identificar cuellos de botella y comprender la carga de trabajo del equipo para tomar mejores decisiones estratégicas.
 
 7. **Documentación y auditoría:** Cada ticket sirve como registro de las actividades y soluciones, lo cual es valioso para futuras referencias, auditorías y la documentación del sistema. 
+
+---
+
+### Áreas de la empresa donde se utilizan tickets 
+
+Aunque nacieron en el mundo de la programación y el soporte técnico, el uso de sistemas de tickets se ha expandido a casi cualquier área de una empresa donde se necesite gestionar solicitudes de servicio.
+​La idea central es simple: transformar el caos (correos, llamadas, mensajes) en un flujo de trabajo ordenado.
+​Si un departamento le "presta un servicio" a otro departamento (o a clientes externos), puede usar tickets. Aquí te muestro los ejemplos más comunes:
+
+​1. **Soporte de TI (IT Help Desk):**
+
+​Este es el uso más clásico. En lugar de que los empleados llamen o envíen un correo al área de sistemas, crean un ticket.
+
+​2. **Atención al Cliente (Customer Support):**
+
+​Es la contraparte externa del Soporte de TI. Gestiona todas las interacciones con los clientes que reportan un problema o tienen una consulta.
+​Ejemplos: "Mi pedido no ha llegado", "El producto vino defectuoso", "Tengo una duda sobre mi factura", "¿Cómo funciona la característica X?".
+​Beneficio: Asegura que ningún cliente sea ignorado y crea un historial de la relación con ese cliente.
+
+​3. **Desarrollo de Software (Software Engineering):**
+
+​Como vimos antes, aquí se usa para gestionar el trabajo de creación y mantenimiento del software.
+​Ejemplos: "Crear la nueva pantalla de login" (Tarea/Feature), "El botón de pago da error" (Bug), "Optimizar la base de datos" (Mejora).
+​Beneficio: Es la base de las metodologías Ágiles (Scrum, Kanban) para organizar el backlog y los sprints.
+
+​4. **Marketing y Diseño Gráfico:**
+
+​Este departamento recibe constantemente solicitudes de otras áreas (Ventas, Producto, Gerencia).
+​Ejemplos: "Necesitamos un banner para la nueva campaña", "Preparar una presentación para el lunes", "Redactar el newsletter de este mes", "Diseñar un folleto".
+​Beneficio: Evita el trabajo "urgente" de último minuto y permite gestionar el ciclo de revisiones y aprobaciones de forma ordenada.
+
+​5. **Recursos Humanos (RR.HH.):**
+
+​RR.HH. gestiona solicitudes de toda la plantilla de empleados.
+​Ejemplos: "Solicitud de vacaciones", "Actualizar mis datos personales", "Consulta sobre mi nómina", "Proceso de onboarding para un nuevo empleado" (que es un ticket "padre" con muchas subtareas).
+​Beneficio: Estandariza procesos internos y mantiene un registro confidencial y auditable de las solicitudes.
+
+​6. **Operaciones y Mantenimiento (Facilities):**
+
+​Gestiona las solicitudes relacionadas con la infraestructura física de la oficina.
+​Ejemplos: "Se fundió una luz en el pasillo", "Reservar la sala de reuniones", "Pedir más café para la cocina", "El aire acondicionado no funciona".
+​Beneficio: Centraliza peticiones que de otra manera serían verbales y se perderían. El Valor Principal en la Empresa.
+
+​En resumen, cualquier departamento que actúe como un "centro de servicios" utiliza tickets para:
+
+- ​Estandarizar las Solicitudes: Obliga a la gente a incluir la información mínima necesaria (Ej. "No puedes pedir un diseño sin decir el tamaño y el texto").
+
+- ​Dar Visibilidad: Todos (solicitante y ejecutor) saben en qué estado está la tarea.
+
+-​ Generar Métricas (KPIs): Los gerentes pueden responder preguntas clave: ¿Cuántas solicitudes recibimos al mes? ¿Cuánto tardamos en resolverlas? ¿Qué departamento nos pide más cosas? ¿Dónde tenemos cuellos de botella?
+
+​El sistema de tickets es, fundamentalmente, una herramienta de gestión, trazabilidad y eficiencia operativa para toda la organización.
