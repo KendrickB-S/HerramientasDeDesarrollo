@@ -24,3 +24,21 @@ const Inicio = () => {
         <hr className="my-4" />
         <p>Navega por el menú de la izquierda para explorar todas las herramientas.</p>
       </div>
+
+    {/* Sección de Tarjetas (Cards) */}
+      <h2>Herramientas Destacadas</h2>
+      <div className="row">
+        
+        {/* Card 1: Calculadora */}
+        <div className="col-md-4 mb-3">
+          <div className="card h-100 shadow-sm">
+            <div className="card-body d-flex flex-column">
+              <h5 className="card-title">
+                <FontAwesomeIcon icon={faCalculator} className="me-2" />
+                Calculadora
+              </h5>
+              <p className="card-text">Una calculadora simple para operaciones matemáticas básicas.</p>
+              <Link to="/calculadora" className="btn btn-primary mt-auto">Ir a la Calculadora</Link>
+            </div>
+          </div>
+        </div>
