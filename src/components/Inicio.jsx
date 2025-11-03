@@ -42,7 +42,7 @@ const Inicio = () => {
             </div>
           </div>
         </div>
-        
+
         {/* Card 2: Noticias */}
         <div className="col-md-4 mb-3">
           <div className="card h-100 shadow-sm">
@@ -53,6 +53,20 @@ const Inicio = () => {
               </h5>
               <p className="card-text">Ver los últimos titulares de noticias consumiendo una API externa.</p>
               <Link to="/noticias" className="btn btn-primary mt-auto">Ver Noticias</Link>
+            </div>
+          </div>
+        </div>
+        
+        {/* Card 3: Tienda */}
+        <div className="col-md-4 mb-3">
+          <div className="card h-100 shadow-sm">
+            <div className="card-body d-flex flex-column">
+              <h5 className="card-title">
+                <FontAwesomeIcon icon={faStore} className="me-2" />
+                Mini Tienda
+              </h5>
+              <p className="card-text">Un E-commerce básico con catálogo de productos y carrito de compras.</p>
+              <Link to="/tienda" className="btn btn-primary mt-auto">Ir a la Tienda</Link>
             </div>
           </div>
         </div>
