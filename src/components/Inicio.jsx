@@ -56,7 +56,7 @@ const Inicio = () => {
             </div>
           </div>
         </div>
-        
+
         {/* Card 3: Tienda */}
         <div className="col-md-4 mb-3">
           <div className="card h-100 shadow-sm">
@@ -70,3 +70,24 @@ const Inicio = () => {
             </div>
           </div>
         </div>
+
+        {/* Card 4: Juego de Cartas (Opcional) */}
+        <div className="col-md-4 mb-3">
+          <div className="card h-100 shadow-sm">
+            <div className="card-body d-flex flex-column">
+              <h5 className="card-title">
+                <FontAwesomeIcon icon={faGamepad} className="me-2" />
+                Juego de Cartas
+              </h5>
+              <p className="card-text">Un juego de memoria (memorama) usando los Pokémon que selecciones.</p>
+              <Link to="/CartasGame" className="btn btn-primary mt-auto">Jugar</Link>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  );
+};
+
+export default Inicio;
