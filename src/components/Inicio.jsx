@@ -42,3 +42,17 @@ const Inicio = () => {
             </div>
           </div>
         </div>
+        
+        {/* Card 2: Noticias */}
+        <div className="col-md-4 mb-3">
+          <div className="card h-100 shadow-sm">
+            <div className="card-body d-flex flex-column">
+              <h5 className="card-title">
+                <FontAwesomeIcon icon={faNewspaper} className="me-2" />
+                Noticias
+              </h5>
+              <p className="card-text">Ver los últimos titulares de noticias consumiendo una API externa.</p>
+              <Link to="/noticias" className="btn btn-primary mt-auto">Ver Noticias</Link>
+            </div>
+          </div>
+        </div>
