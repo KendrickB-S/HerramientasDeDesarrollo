@@ -18,6 +18,7 @@ import Notas from './components/Notas';
 import Tienda from './components/Tienda';
 import Gastos from './components/Gastos';
 import Feed from './components/RedSo/Fedd';
+import Inicio from './components/Inicio';
 
 
 
@@ -50,7 +51,7 @@ function App() {
 
         <div className="proyecto">
           <Routes>
-            <Route path="/" element={<h2>Bienvenido a mi aplicación, diversas herramientas para poner en práctica herramientas de React</h2>} />
+            <Route path="/" element={<Inicio />} />
             <Route path="/formulario" element={<Formulario />} />
             <Route path="/JuegoEspacial" element={<JuegoEspacial />} />
             <Route path='/FetchPokemonsDetalleS' element={<FetchPokemonsDetalleS/>}/>
