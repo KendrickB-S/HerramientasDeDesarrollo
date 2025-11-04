@@ -199,3 +199,56 @@ Aunque nacieron en el mundo de la programación y el soporte técnico, el uso de
 -​ Generar Métricas (KPIs): Los gerentes pueden responder preguntas clave: ¿Cuántas solicitudes recibimos al mes? ¿Cuánto tardamos en resolverlas? ¿Qué departamento nos pide más cosas? ¿Dónde tenemos cuellos de botella?
 
 ​El sistema de tickets es, fundamentalmente, una herramienta de gestión, trazabilidad y eficiencia operativa para toda la organización.
+
+---
+
+
+### ¿Qué es Docker?
+
+**Docker es una plataforma que te permite "empaquetar" una aplicación y todas sus dependencias en una "caja" estandarizada llamada contenedor.**
+
+Esta "caja" (el contenedor) puede ejecutarse de manera confiable en cualquier computadora que tenga Docker instalado, sin importar el sistema operativo que tenga debajo.
+
+### La mejor analogía: Contenedores de envío
+
+Piensa en los contenedores de envío físicos (los que van en barcos y trenes):
+
+* No importa lo que lleven dentro (electrónicos, ropa, comida), todos tienen la misma forma estándar.
+* Debido a esa forma estándar, cualquier grúa, barco o camión en el mundo puede moverlos sin preocuparse por lo que hay dentro.
+
+Un  contenedor de Docker es exactamente igual para el software:
+
+* "Empaqueta" todo lo que una aplicación necesita: el código, las bibliotecas (librerías), las herramientas del sistema, la configuración, etc.
+* Como es un paquete estándar, se puede ejecutar en la laptop de un desarrollador, en un servidor de pruebas o en la nube (como Amazon Web Services o Google Cloud) **exactamente de la misma manera**.
+
+### ¿Para qué sirve Docker? 
+
+El objetivo principal de Docker es resolver el clásico problema de: **"¡Pero en mi máquina sí funciona!"**.
+
+Docker garantiza que, si una aplicación funciona dentro de su contenedor, funcionará en cualquier lugar donde ese contenedor se ejecute.
+
+Estos son sus usos y ventajas principales:
+
+1. **Portabilidad y Consistencia**
+Como la aplicación y su entorno están empaquetados juntos, te aseguras de que se comporte igual en desarrollo, en pruebas y en producción. Se eliminan los problemas de "falta esta librería" o "esta versión no es compatible".
+
+2. **Eficiencia y Rapidez (La gran diferencia con las Máquinas Virtuales)**
+Este es un punto clave.
+
+* Una Máquina Virtual (VM) tiene que simular un hardware completo y correr un sistema operativo entero (ej. un Windows completo dentro de tu Mac). Esto es lento (tarda minutos en arrancar) y consume muchos recursos (gigas de RAM y disco).
+* Un Contenedor (Docker) es mucho más ligero. Comparte el sistema operativo de la máquina anfitriona. No virtualiza el hardware, solo aísla la aplicación. Esto le permite arrancar en segundos y consumir muchos menos recursos.
+
+3. **Aislamiento**
+Puedes tener múltiples contenedores corriendo en la misma máquina, y estarán completamente aislados entre sí.
+
+
+4. **Arquitectura de Microservicios**
+Docker es la tecnología fundamental detrás de los "microservicios". En lugar de construir una aplicación gigante y monolítica, las empresas ahora la dividen en servicios pequeños e independientes (ej. un servicio para "pagos", otro para "inicio de sesión", otro para el "catálogo de productos"). Cada uno de estos microservicios corre en su propio contenedor, lo que facilita actualizarlos, escalarlos o repararlos de forma individual.
+
+---
+
+### En resumen
+
+Docker es una herramienta que te permite construir, enviar y ejecutar aplicaciones de forma rápida y consistente en cualquier lugar, empaquetándolas en contenedores ligeros y portátiles. Es fundamental para las prácticas modernas de desarrollo y operaciones (lo que se conoce como DevOps).
+
+
