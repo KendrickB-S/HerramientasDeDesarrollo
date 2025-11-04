@@ -32,7 +32,7 @@ const Inicio = () => {
         {/* Card 1: Calculadora */}
         <div className="col-md-4 mb-3">
           <div className="card h-100 shadow-sm">
-            <div className="card-body d-flex flex-column">
+            <div className="card-body b-flex flex-column">
               <h5 className="card-title">
                 <FontAwesomeIcon icon={faCalculator} className="me-2" />
                 Calculadora
@@ -46,7 +46,7 @@ const Inicio = () => {
         {/* Card 2: Noticias */}
         <div className="col-md-4 mb-3">
           <div className="card h-100 shadow-sm">
-            <div className="card-body d-flex flex-column">
+            <div className="card-body b-flex flex-column">
               <h5 className="card-title">
                 <FontAwesomeIcon icon={faNewspaper} className="me-2" />
                 Noticias
@@ -60,7 +60,7 @@ const Inicio = () => {
         {/* Card 3: Tienda */}
         <div className="col-md-4 mb-3">
           <div className="card h-100 shadow-sm">
-            <div className="card-body d-flex flex-column">
+            <div className="card-body b-flex flex-column">
               <h5 className="card-title">
                 <FontAwesomeIcon icon={faStore} className="me-2" />
                 Mini Tienda
@@ -74,7 +74,7 @@ const Inicio = () => {
         {/* Card 4: Juego de Cartas (Opcional) */}
         <div className="col-md-4 mb-3">
           <div className="card h-100 shadow-sm">
-            <div className="card-body d-flex flex-column">
+            <div className="card-body b-flex flex-column">
               <h5 className="card-title">
                 <FontAwesomeIcon icon={faGamepad} className="me-2" />
                 Juego de Cartas
