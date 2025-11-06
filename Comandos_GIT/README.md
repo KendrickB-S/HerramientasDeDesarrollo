@@ -203,7 +203,7 @@ Aunque nacieron en el mundo de la programación y el soporte técnico, el uso de
 ---
 
 
-### ¿Qué es Docker?
+# ¿Qué es Docker?
 
 **Docker es una plataforma que te permite "empaquetar" una aplicación y todas sus dependencias en una "caja" estandarizada llamada contenedor.**
 
@@ -252,3 +252,34 @@ Docker es la tecnología fundamental detrás de los "microservicios". En lugar d
 Docker es una herramienta que te permite construir, enviar y ejecutar aplicaciones de forma rápida y consistente en cualquier lugar, empaquetándolas en contenedores ligeros y portátiles. Es fundamental para las prácticas modernas de desarrollo y operaciones (lo que se conoce como DevOps).
 
 
+---
+### ¿Por qué utilizar Docker?
+Usar Docker principalmente para ganar velocidad, consistencia y portabilidad en el ciclo de vida del software.
+
+### Razones principales, explicadas con los problemas que resuelven:
+
+1. **Para eliminar el problema: "¡En mi máquina sí funciona!"**
+
+El Problema: Un desarrollador programa una aplicación en su laptop (con Windows 11, Python 3.10). Funciona perfecto. La envía al servidor de producción (que usa Linux y tiene Python 3.8). La aplicación falla por todos lados. Pasan horas o días buscando las diferencias de configuración.
+
+La Solución Docker: Docker empaqueta la aplicación junto con su entorno exacto (Python 3.10 y todas sus librerías) en un contenedor. Ese contenedor es una "caja negra" idéntica. Si funciona en la laptop del desarrollador, se garantiza que funcionará igual en el servidor de pruebas, en el servidor de producción o en la nube.
+
+2. **Para ser mucho más eficiente y rápido que las Máquinas Virtuales (VMs)**
+
+El Problema: La forma antigua de aislar aplicaciones eran las Máquinas Virtuales. Pero una VM incluye un sistema operativo completo (ej. un Windows entero de 20 GB). Son pesadas, consumen mucha RAM y disco, y tardan minutos en arrancar.
+
+La Solución Docker: Un contenedor no necesita un sistema operativo invitado. Comparte el sistema operativo de la máquina anfitriona (anfitrión). Solo empaqueta la aplicación. Por eso, los contenedores son extremadamente ligeros (megabytes en lugar de gigabytes) y arrancan en segundos, no en minutos.
+
+3. **Para evitar conflictos entre aplicaciones**
+
+El Problema: Quieres correr dos aplicaciones en el mismo servidor. La "App A" necesita la base de datos PostgreSQL versión 10. La "App B" necesita PostgreSQL versión 14. Instalarlas juntas en la misma máquina es una pesadilla de conflictos de versiones.
+
+La Solución Docker: Creas un contenedor para la "App A" (que incluye su PostgreSQL 10) y otro contenedor para la "App B" (con su PostgreSQL 14). Pueden correr una al lado de la otra sin "verse" ni molestarse. Cada una tiene su propio entorno aislado.
+
+4. **Para agilizar la configuración de entornos de desarrollo**
+
+El Problema: Un nuevo desarrollador se une al equipo. Tarda uno o dos días en configurar su computadora: instalar la base de datos, el servidor web, las versiones correctas de las herramientas, etc., solo para poder empezar a programar.
+
+La Solución Docker: El proyecto tiene un archivo de configuración de Docker (un docker-compose.yml). El nuevo desarrollador solo instala Docker y ejecuta un comando (ej. docker-compose up). En minutos, tiene todo el entorno complejo del proyecto funcionando en su máquina, idéntico al de todos los demás.
+
+---
