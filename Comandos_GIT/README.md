@@ -283,3 +283,66 @@ El Problema: Un nuevo desarrollador se une al equipo. Tarda uno o dos días en c
 La Solución Docker: El proyecto tiene un archivo de configuración de Docker (un docker-compose.yml). El nuevo desarrollador solo instala Docker y ejecuta un comando (ej. docker-compose up). En minutos, tiene todo el entorno complejo del proyecto funcionando en su máquina, idéntico al de todos los demás.
 
 ---
+
+# Docker en el ámbito empresarial 
+Docker se utiliza en todas las etapas del ciclo de vida del software, conectando a los equipos de Desarrollo, Pruebas y Operaciones.
+
+No es una herramienta para un solo departamento, sino la tecnología que unifica el proceso completo.
+
+Partes donde se utiliza docker:
+---
+
+### 1. **En Desarrollo (El equipo de "Dev")**
+
+Esta es la primera etapa. Aquí, los programadores lo usan a diario para:
+
+* **Crear entornos idénticos:** 
+Cada desarrollador en el equipo ejecuta la aplicación en un contenedor. Esto garantiza que todos (el programador en Mac, el de Windows y el de Linux) trabajen con exactamente las mismas librerías y versiones, eliminando el "¡en mi máquina sí funciona!".
+
+* **Definir la aplicación:** 
+El desarrollador crea el "plano" de la aplicación, un archivo de texto llamado Dockerfile. Este archivo es la receta que le dice a Docker cómo construir la "caja" (la imagen) de la aplicación.
+
+**Resultado de esta etapa:** Un Dockerfile (la receta) y una Imagen de Docker (el paquete/caja cerrada).
+
+---
+
+### 2.  **En Pruebas (El equipo de "QA")**
+
+Una vez que el desarrollador dice "listo", el equipo de Calidad (QA) o los sistemas automatizados entran en acción.
+
+* **Probar el paquete real:** 
+El equipo de QA no prueba el código fuente, prueba la Imagen de Docker que creó el desarrollador.
+
+* **Automatización (CI/CD):**
+ Esta imagen se envía a un sistema de Integración Continua (CI) como Jenkins, GitLab CI o GitHub Actions. Este sistema automáticamente corre miles de pruebas (unitarias, de integración, de rendimiento) dentro del contenedor.
+
+
+
+
+* **Garantía de calidad:** 
+Si el contenedor pasa todas las pruebas, la empresa sabe que ese paquete específico es estable y funciona.
+
+**Resultado de esta etapa:** 
+Una Imagen de Docker que ha sido validada y aprobada para producción.
+
+---
+
+### 3.  **En Producción (El equipo de "Ops" o DevOps)**
+
+Esta es la etapa final: entregar la aplicación a los clientes.
+
+* **Despliegue predecible:** 
+El equipo de Operaciones (Ops) toma la imagen que fue exactamente la misma que probó QA y la ejecuta en los servidores de producción. No hay sorpresas, no hay que instalar nada. Simplemente "correr la caja".
+
+* **Orquestación (Kubernetes):** 
+En una empresa grande, no hay un solo contenedor, hay miles. El equipo de Ops usa herramientas como Kubernetes (que es un "orquestador de contenedores") para gestionar toda esta flota.
+
+* **Escalado y Alta Disponibilidad:** 
+¿El sitio web se volvió viral? El equipo de Ops (usando Kubernetes) simplemente le ordena al sistema: "necesito 50 copias de este contenedor ahora". En segundos, la aplicación escala para manejar la carga. Si un servidor falla, Kubernetes mueve automáticamente sus contenedores a un servidor sano.
+
+**Resultado de esta etapa:** La aplicación corriendo de forma estable, escalable y confiable para los clientes.
+
+---
+
+
+
