@@ -77,3 +77,14 @@ Presupuesto, lista de gastos y total restante.
 LocalStorage para guardar datos.
 
 ---
+### Pomodoro Timer
+
+Un temporizador clásico de productividad (ej. 25 minutos de trabajo, 5 de descanso). Usaría useState y useEffect con setTimeout o setInterval.
+
+### Gestor de "To-Do List"
+
+Similar a Notas, pero más enfocado en tareas. Permitiría añadir tareas, marcarlas como completadas y borrarlas, todo guardado en localStorage.
+
+### Generador de Contraseñas simple
+
+Una utilidad simple que genera una contraseña aleatoria con opciones (ej. incluir números, símbolos, longitud).
