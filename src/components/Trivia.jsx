@@ -1,5 +1,5 @@
 // src/components/Trivia.js
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 
 export default function Trivia() {
   const [preguntas, setPreguntas] = useState([]);
@@ -21,7 +21,7 @@ export default function Trivia() {
   };
 
   // ---- carga de preguntas
-  const cargarPreguntas = async (signal) => {
+ const cargarPreguntas = useCallback(async (signal) => {
     setCargando(true);
     setError(null);
     try {
@@ -72,7 +72,7 @@ export default function Trivia() {
     } finally {
       setCargando(false);
     }
-  };
+  },[]);
 
   const reiniciarTrivia = () => {
     setTerminado(false);
@@ -86,7 +86,7 @@ export default function Trivia() {
     const controller = new AbortController();
     cargarPreguntas(controller.signal);
     return () => controller.abort();
-  }, []);
+  }, [cargarPreguntas]);
 
   const handleRespuesta = (opcion) => {
     setRespuestaSeleccionada(opcion);
