@@ -6,7 +6,6 @@ const FetchPokemonsDetalleS = () => {
   const [error, setError] = useState(null);
   const [nextPage, setNextPage] = useState(null);
   const [previousPage, setPreviousPage] = useState(null);
-  const [selectedPokemonUrl, setSelectedPokemonUrl] = useState(null);
   const [pokemonDetails, setPokemonDetails] = useState(null);
 
 
@@ -65,7 +64,6 @@ const FetchPokemonsDetalleS = () => {
   const handleNextPage = () => nextPage && fetchList(nextPage);
   const handlePreviousPage = () => previousPage && fetchList(previousPage);
   const handlePokemonClick = (url) => {
-    setSelectedPokemonUrl(url);
     fetchPokemonDetails(url);
   };
 
@@ -79,7 +77,12 @@ const FetchPokemonsDetalleS = () => {
     pokemonItem: { marginBottom: '8px' },
     pokemonLink: {
       color: '#2c3e50', textDecoration: 'none', fontWeight: 'bold', cursor: 'pointer',
+      background: 'none', 
+      border: 'none',     
+      padding: 0,         
+      textAlign: 'left' 
     },
+    
     pagination: { marginTop: '16px', display: 'flex', gap: '10px' },
     paginationButton: {
       padding: '8px 12px', borderRadius: '4px', border: '1px solid #ccc',
@@ -123,13 +126,13 @@ const FetchPokemonsDetalleS = () => {
           <ul style={styles.pokemonList}>
             {data.map((pokemon) => (
               <li key={pokemon.name} style={styles.pokemonItem}>
-                <a
+                <button
                   href="#"
                   onClick={() => handlePokemonClick(pokemon.url)}
                   style={styles.pokemonLink}
                 >
                   {pokemon.name}
-                </a>
+                </button>
               </li>
             ))}
           </ul>
