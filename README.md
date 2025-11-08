@@ -76,36 +76,4 @@ Presupuesto, lista de gastos y total restante.
 
 LocalStorage para guardar datos.
 
-
-### App de traducción de textos
-
-API: Cloud Translation API
-
-Funcionalidad:
-
-El usuario ingresa un texto y selecciona idioma destino.
-
-Se muestra la traducción en tiempo real.
-
-
-### Reconocimiento de voz a texto
-
-API: Speech-to-Text API
-
-Funcionalidad:
-
-Capturar audio con el micrófono del usuario.
-
-Convertirlo a texto en pantalla.
-
-
-### Generador de voz (Text-to-Speech)
-
-API: Text-to-Speech API
-
-Funcionalidad:
-
-El usuario escribe un texto y la app lo convierte en audio.
-
-Opción para elegir voz (masculina/femenina).
-
+---
