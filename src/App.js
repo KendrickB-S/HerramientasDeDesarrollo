@@ -19,6 +19,7 @@ import Tienda from './components/Tienda';
 import Gastos from './components/Gastos';
 import Feed from './components/RedSo/Fedd';
 import Inicio from './components/Inicio';
+import TodoList from './components/TodoList';
 
 
 
@@ -27,7 +28,7 @@ function App() {
     <Router>
       <div className="d-flex">
         {/* Menú de navegación vertical */}
-        <nav className="flex-column p-3 bg-dark text-light" style={{ height: '100vh' }}>
+        <nav className="flex-column p-3 bg-dark text-light" style={{ height: '100vh', display:'table' }}>
           <h3 className="text-primary">Menú</h3>
           <Link to="/" className="nav-link p-2">Inicio</Link>
           <Link to="/formulario" className="nav-link p-2">Formulario</Link>
@@ -46,6 +47,7 @@ function App() {
           <Link to="/tienda" className="nav-link p-2">Tienda</Link>
           <Link to="/gastos" className="nav-link p-2">Gastos</Link>
           <Link to="/redso" className="nav-link p-2">Red Social</Link>
+          <Link to="/todolist" className="nav-link p-2">Todo List</Link>
 
         </nav>
 
@@ -68,6 +70,7 @@ function App() {
             <Route path="/tienda" element={<Tienda />} />
             <Route path="/gastos" element={<Gastos />} />
             <Route path="/redso" element={<Feed />} />
+            <Route path="/todolist" element={<TodoList />} />
 
           </Routes>
         </div>
